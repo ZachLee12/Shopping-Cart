@@ -1,0 +1,48 @@
+@import './_reset.scss',
+'./Routes/Card/_Card.scss';
+
+$text-color: #313131;
+$text-color-hover: #5694c6;
+$body-color: #d0c9b7;
+//@functions, @mixins, @content, @extend (inheritance)
+//nesting, @import (name your partials starting with '_')
+
+body {
+    background-color: $body-color;
+}
+
+@mixin flexCenter($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+    @content
+}
+
+.header {
+    @include flexCenter(row) {
+        //overwrites justify-content:center
+        justify-content: space-between
+    }
+
+    border: 2px solid red;
+    padding: 0 20px;
+
+}
+
+.nagivation-tabs-wrapper {
+    @include flexCenter(row) {
+        gap: 30px;
+    }
+
+    .navigation-tab {
+        text-decoration: none;
+        color: $text-color;
+
+        &:hover {
+            color: $text-color-hover;
+        }
+    }
+
+
+}
