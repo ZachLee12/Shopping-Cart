@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './Root.scss'
-import Card from './Routes/Card/Card'
 import { Outlet, Link } from 'react-router-dom'
 
 function Root() {
