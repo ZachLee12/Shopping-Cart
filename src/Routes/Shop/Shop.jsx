@@ -39,6 +39,11 @@ export default function Shop() {
     const [shop, setShop] = React.useState(initialState)
 
     const handleClickIsFavourite = (e) => {
+        const toggleIsFavourite = (item) => {
+            return Object.assign(item, {
+                isFavourite: !item.isFavourite
+            })
+        }
         let itemToChangeIndex = shop.itemList.findIndex(item => item.id === e.target.id)
         let copyList = [...shop.itemList]
         copyList[itemToChangeIndex] = toggleIsFavourite(copyList[itemToChangeIndex])
@@ -49,10 +54,22 @@ export default function Shop() {
         })
     }
 
-    const toggleIsFavourite = (item) => {
-        return Object.assign(item, {
-            isFavourite: !item.isFavourite
+    const handleClickAddToCart = (e) => {
+        const toggleAddToCart = (item) => {
+            return Object.assign(item, {
+                addedToCart: !item.addedToCart
+            })
+        }
+
+        let itemToChangeIndex = shop.itemList.findIndex(item => item.id === e.target.id)
+        let copyList = [...shop.itemList]
+        copyList[itemToChangeIndex] = toggleAddToCart(copyList[itemToChangeIndex])
+
+        setShop({
+            ...shop,
+            itemList: copyList
         })
+        console.log(copyList[itemToChangeIndex])
     }
 
     return (
@@ -67,10 +84,11 @@ export default function Shop() {
                         key={item.id}
                         id={item.id}
                         price={item.price}
-                        addedToCard={item.addedToCart}
+                        addedToCart={item.addedToCart}
                         isFavourite={item.isFavourite}
                         description={item.description}
                         handleClickIsFavourite={handleClickIsFavourite}
+                        handleClickAddToCart={handleClickAddToCart}
                     />
                 )
             })}

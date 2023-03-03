@@ -24,10 +24,7 @@ export default function ShopItem(props) {
                         id={props.id}
                         onClick={props.handleClickIsFavourite}
                     >{props.isFavourite ? '⭐' : '☆'}</span>
-                    <button onClick={() => setItem({
-                        ...props,
-                        addedToCart: !props.addedToCart
-                    })}>{props.addedToCart ? '✔ Added to Cart' : 'Add to Cart'}</button>
+                    <button id={props.id} onClick={props.handleClickAddToCart}>{props.addedToCart ? '✔ Added to Cart' : 'Add to Cart'}</button>
                 </figcaption>
             </figure>
         </React.Fragment>
