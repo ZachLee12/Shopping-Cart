@@ -1,7 +1,4 @@
 import React from "react";
-import uniqid from 'uniqid';
-import PlaceholderImage from '../../assets/images/placeholderImage.jpg'
-
 export default function ShopItem(props) {
     // const initialState = {
     //     image: PlaceholderImage,
@@ -23,10 +20,13 @@ export default function ShopItem(props) {
                     <p className="ShopItem-name">{props.name}</p>
                     <p className="ShopItem-description">{props.description}</p>
                     <p className="price">19.99 CHF</p>
-                    <p className="favourite-star" >⭐ ☆</p>
+                    <span className="favourite-star"
+                        id={props.id}
+                        onClick={props.handleClickIsFavourite}
+                    >{props.isFavourite ? '⭐' : '☆'}</span>
                     <button onClick={() => setItem({
                         ...props,
-                        addedToCart: !item.addedToCart
+                        addedToCart: !props.addedToCart
                     })}>{props.addedToCart ? '✔ Added to Cart' : 'Add to Cart'}</button>
                 </figcaption>
             </figure>
