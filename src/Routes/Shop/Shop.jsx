@@ -61,6 +61,14 @@ export default function Shop() {
             addedToCart: false,
             isFavourite: false,
             description: 'This is a sample description about the ShopItem.'
+        }, {
+            image: Clothes3,
+            name: 'Sample Item',
+            id: uniqid(),
+            price: '12.34 CHF',
+            addedToCart: false,
+            isFavourite: false,
+            description: 'This is a sample description about the ShopItem.'
         },]
     }
 

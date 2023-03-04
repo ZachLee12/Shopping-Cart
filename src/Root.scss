@@ -8,6 +8,8 @@
 $text-color: #313131;
 $text-color-hover: #5694c6;
 $body-color: #d0c9b7;
+
+$header-height: 50px;
 //@functions, @mixins, @content, @extend (inheritance)
 //nesting, @import (name your partials starting with '_')
 
@@ -15,7 +17,7 @@ html,
 body {
     margin: 0px;
 
-
+    height: 100%;
 }
 
 
@@ -44,6 +46,7 @@ body {
         justify-content: space-between
     }
 
+    height: $header-height;
     border: 2px solid red;
     padding: 0 20px;
 
@@ -66,19 +69,19 @@ body {
 
 .main-content-wrapper {
     display: flex;
-    min-height: 100vh;
+    max-height: 100%;
+    // border: 2px solid greenyellow;
+    height: calc(100vh - $header-height);
 
     .sidebar {
         flex-shrink: 0;
         width: 300px;
-        min-height: 100%;
         background-color: beige;
     }
 
     .outlet-wrapper {
         flex-grow: 1;
-        width: 100%;
-        border: 2px solid red;
+        overflow-y: auto;
     }
 
 }

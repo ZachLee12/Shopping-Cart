@@ -28,7 +28,7 @@ function Root() {
         </div>
       </header>
 
-      <div className="main-content-wrapper">
+      <section className="main-content-wrapper">
         <div className='sidebar'>
           <label className='search-bar-label' htmlFor="search-bar">
             Search
@@ -39,7 +39,7 @@ function Root() {
         <div className="outlet-wrapper">
           <Outlet />
         </div>
-      </div>
+      </section>
     </div>
   )
 }
