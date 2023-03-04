@@ -29,6 +29,8 @@ export default function Root() {
 
       <section className="main-content-wrapper">
         <div className='sidebar'>
+          
+          <Link to={'/favourites'}>Favourites</Link>
         </div>
 
         <div className="outlet-wrapper">

@@ -5,11 +5,13 @@ import About from './Routes/About/About'
 import Contact from './Routes/Contact/Contact'
 import ErrorPage from './Routes/Error/Error'
 import Shop from './Routes/Shop/Shop'
+
 import {
   createBrowserRouter,
   RouterProvider,
 } from 'react-router-dom'
 import { loader as shopLoader } from './Routes/Shop/Shop'
+import Favourites from './Routes/Favourites/Favourites'
 
 const router = createBrowserRouter([
   {
@@ -28,7 +30,11 @@ const router = createBrowserRouter([
       {
         path: '/shop',
         element: <Shop />,
-        loader: shopLoader,
+        loader: shopLoader
+      },
+      {
+        path: '/favourites',
+        element: <Favourites />
       }
     ]
   },
