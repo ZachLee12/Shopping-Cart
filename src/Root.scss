@@ -11,8 +11,18 @@ $body-color: #d0c9b7;
 //@functions, @mixins, @content, @extend (inheritance)
 //nesting, @import (name your partials starting with '_')
 
+html,
+body {
+    margin: 0px;
+
+
+}
+
+
 body {
     background-color: $body-color;
+    display: flex;
+    flex-direction: column;
 }
 
 @mixin flexCenter($direction: row) {
@@ -21,6 +31,11 @@ body {
     justify-content: center;
     align-items: center;
     @content
+}
+
+#Root {
+    background-color: cadetblue;
+    min-height: 100vh;
 }
 
 .header {
@@ -32,21 +47,38 @@ body {
     border: 2px solid red;
     padding: 0 20px;
 
-}
+    .nagivation-tabs-wrapper {
+        @include flexCenter(row) {
+            gap: 30px;
+        }
 
-.nagivation-tabs-wrapper {
-    @include flexCenter(row) {
-        gap: 30px;
-    }
+        .navigation-tab {
+            text-decoration: none;
+            color: $text-color;
 
-    .navigation-tab {
-        text-decoration: none;
-        color: $text-color;
-
-        &:hover {
-            color: $text-color-hover;
+            &:hover {
+                color: $text-color-hover;
+            }
         }
     }
+}
 
+
+.main-content-wrapper {
+    display: flex;
+    min-height: 100vh;
+
+    .sidebar {
+        flex-shrink: 0;
+        width: 300px;
+        min-height: 100%;
+        background-color: beige;
+    }
+
+    .outlet-wrapper {
+        flex-grow: 1;
+        width: 100%;
+        border: 2px solid red;
+    }
 
 }

@@ -4,6 +4,7 @@ import PlaceholderImage from '../../assets/images/placeholderImage.jpg'
 import Clothes1 from '../../assets/images/clothes1.jpg'
 import Clothes2 from '../../assets/images/clothes2.webp'
 import Clothes3 from '../../assets/images/clothes3.webp'
+import Clothes4 from '../../assets/images/clothes4.jpg'
 import uniqid from 'uniqid';
 
 
@@ -44,8 +45,16 @@ export default function Shop() {
             addedToCart: false,
             isFavourite: false,
             description: 'This is a sample description about the ShopItem.'
-        },{
+        }, {
             image: Clothes3,
+            name: 'Sample Item',
+            id: uniqid(),
+            price: '12.34 CHF',
+            addedToCart: false,
+            isFavourite: false,
+            description: 'This is a sample description about the ShopItem.'
+        }, {
+            image: Clothes4,
             name: 'Sample Item',
             id: uniqid(),
             price: '12.34 CHF',

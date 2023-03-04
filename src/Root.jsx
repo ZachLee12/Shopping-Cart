@@ -27,7 +27,19 @@ function Root() {
           </Link>
         </div>
       </header>
-      <Outlet />
+
+      <div className="main-content-wrapper">
+        <div className='sidebar'>
+          <label className='search-bar-label' htmlFor="search-bar">
+            Search
+            <input type="text" id='search-bar' />
+          </label>
+        </div>
+
+        <div className="outlet-wrapper">
+          <Outlet />
+        </div>
+      </div>
     </div>
   )
 }
