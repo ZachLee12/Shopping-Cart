@@ -1,0 +1,13 @@
+@mixin gridCenter {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.shop-items-wrapper {
+    @include gridCenter();
+    grid-template: 1fr / 1fr 1fr;
+
+    //.ShopItem is in _ShopItem.scss 
+
+}

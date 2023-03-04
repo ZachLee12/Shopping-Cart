@@ -1,17 +1,6 @@
 import React from "react";
+
 export default function ShopItem(props) {
-    // const initialState = {
-    //     image: PlaceholderImage,
-    //     name: 'Sample Item',
-    //     id: uniqid(),
-    //     addedToCart: false,
-    //     isFavourite: false,
-    //     description: 'This is a sample description about the ShopItem.'
-    // }
-
-    // const [item, setItem] = React.useState();
-
-
     return (
         <React.Fragment>
             <figure className="ShopItem">

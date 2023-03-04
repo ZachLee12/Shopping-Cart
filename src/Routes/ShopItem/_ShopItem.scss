@@ -14,6 +14,8 @@ $card-background: #b1aaaa;
     border: 3px solid gray;
     background-color: #d1d8de;
     padding: 15px;
+    margin: 0px;
+
     @include flexCenter(column);
 
     .ShopItem-image {
@@ -26,6 +28,6 @@ $card-background: #b1aaaa;
     }
 }
 
-.favourite-star{
+.favourite-star {
     background-color: yellow;
 }
