@@ -10,10 +10,13 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 
+import { loader as rootLoader } from './Root'
+
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+    loader: rootLoader,
     errorElement: <ErrorPage />,
     children: [
       {

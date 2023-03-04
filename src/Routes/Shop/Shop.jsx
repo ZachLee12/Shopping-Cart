@@ -50,11 +50,11 @@ export default function Shop() {
     }
 
     useEffect(() => {
-        console.log(searchItems('good'))
+        // console.log(searchItems('good'))
 
         return (
             () => {
-                console.log('UNMOUNT')
+                // console.log('UNMOUNT')
             }
         )
     })

@@ -1,8 +1,18 @@
-import { useState, Suspense } from 'react'
 import './Root.scss'
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, Link, Form } from 'react-router-dom'
+import { searchItems } from './shopItems'
 
-function Root() {
+
+export function loader({ request }) {
+  const url = new URL(request.url)
+  const q = url.searchParams.get('q')
+  return { searchedItemList: searchItems(q) }
+}
+
+
+export default function Root() {
+  
+
   return (
     <div id="Root">
       <header className='header'>
@@ -28,10 +38,16 @@ function Root() {
 
       <section className="main-content-wrapper">
         <div className='sidebar'>
-          <label className='search-bar-label' htmlFor="search-bar">
-            Search
-            <input type="text" id='search-bar' />
-          </label>
+          <Form id='search-form'>
+            <label className='search-bar-label' htmlFor="search-bar">
+              Search
+              <input
+                type="search"
+                id='search-bar'
+                name='q'
+              />
+            </label>
+          </Form>
         </div>
 
         <div className="outlet-wrapper">
@@ -41,5 +57,3 @@ function Root() {
     </div>
   )
 }
-
-export default Root
