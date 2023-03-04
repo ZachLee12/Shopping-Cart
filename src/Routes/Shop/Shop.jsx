@@ -5,8 +5,18 @@ import {
     searchItems
 } from "../../shopItems";
 
+import {Form, useLoaderData} from 'react-router-dom'
+
+
+export function loader({ request }) {
+    const url = new URL(request.url)
+    const q = url.searchParams.get('q')
+    console.log(q)
+    return { searchedItemList: searchItems(q) }
+}
 
 export default function Shop() {
+    const { searchedItemList } = useLoaderData();
 
     const initialState = {
         itemList: importedItemList
@@ -50,7 +60,7 @@ export default function Shop() {
     }
 
     useEffect(() => {
-        // console.log(searchItems('good'))
+        console.log(searchedItemList)
 
         return (
             () => {
@@ -62,10 +72,21 @@ export default function Shop() {
     return (
         <div id='Shop'>
             <h1>Shop page</h1>
+            <Form id='search-form'>
+                <label className='search-bar-label' htmlFor="search-bar">
+                    Search
+                    <input
+                        type="search"
+                        id='search-bar'
+                        name='q'
+                    />
+                </label>
+            </Form>
 
 
             <div className="shop-items-wrapper">
-                {shop.itemList.map(item => {
+
+            {searchedItemList.map(item => {
                     return (
                         <ShopItem
                             image={item.image}
@@ -81,6 +102,22 @@ export default function Shop() {
                         />
                     )
                 })}
+                {/* {shop.itemList.map(item => {
+                    return (
+                        <ShopItem
+                            image={item.image}
+                            key={item.id}
+                            id={item.id}
+                            name={item.name}
+                            price={item.price}
+                            addedToCart={item.addedToCart}
+                            isFavourite={item.isFavourite}
+                            description={item.description}
+                            handleClickIsFavourite={handleClickIsFavourite}
+                            handleClickAddToCart={handleClickAddToCart}
+                        />
+                    )
+                })} */}
             </div>
 
         </div>

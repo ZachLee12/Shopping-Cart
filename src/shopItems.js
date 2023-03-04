@@ -66,5 +66,8 @@ export const itemList = [{
 },]
 
 export function searchItems(partialName) {
-    return itemList.filter(item => item.name.toLowerCase().includes(partialName.toLowerCase()))
+    //this filters falsy inputs
+    if (partialName) {
+        return itemList.filter(item => item.name.toLowerCase().includes(partialName.toLowerCase()))
+    }
 } 

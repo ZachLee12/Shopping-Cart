@@ -9,14 +9,12 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from 'react-router-dom'
-
-import { loader as rootLoader } from './Root'
+import { loader as shopLoader } from './Routes/Shop/Shop'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
-    loader: rootLoader,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -29,7 +27,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/shop',
-        element: <Shop />
+        element: <Shop />,
+        loader: shopLoader,
       }
     ]
   },
