@@ -1,2 +1,6 @@
-@import '../Shop/Shop'
+@import '../Shop/Shop';
 
+.favourites-wrapper {
+    //for grid layout
+    @extend .shop-items-wrapper;
+}

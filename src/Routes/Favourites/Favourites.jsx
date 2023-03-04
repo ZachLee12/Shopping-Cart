@@ -1,29 +1,64 @@
-import { itemList } from "../../shopItems";
+import { itemList as fullItemList } from "../../shopItems";
 import ShopItem from "../ShopItem/ShopItem";
+import React, { useEffect } from "react";
 
 export default function Favourites() {
     const searchFavourites = (() => {
-        return itemList.filter(item => item.isFavourite)
+        return fullItemList.filter(item => item.isFavourite)
     })();
 
+    const [favourite, setFavourite] = React.useState({
+        itemList: searchFavourites
+    });
+
+    const handleClickIsFavourite = (e) => {
+        const toggleIsFavourite = (item) => {
+            return Object.assign(item, {
+                isFavourite: !item.isFavourite
+            })
+        }
+
+        let itemToChangeIndex = favourite.itemList.findIndex(item => item.id === e.target.id)
+        let copyList = [...favourite.itemList]
+        copyList[itemToChangeIndex] = toggleIsFavourite(copyList[itemToChangeIndex])
+
+        setFavourite({
+            ...favourite.itemList,
+            itemList: copyList
+        })
+    }
+
+    useEffect(() => {
+        // console.log('COMPONENT MOUNTED')
+        // console.log(favourite)
+
+        return () => {
+            // console.log('COMPONENT UNMOUNTED')
+            // console.log(favourite)
+        }
+
+    }, [])
 
     return (
         <div id="Favourites">
             <h1>Favourite</h1>
-            {searchFavourites.map(item => {
-                return (
-                    <ShopItem
-                        image={item.image}
-                        key={item.id}
-                        id={item.id}
-                        name={item.name}
-                        price={item.price}
-                        addedToCart={item.addedToCart}
-                        isFavourite={item.isFavourite}
-                        description={item.description}
-                    />
-                )
-            })}
+            <div className="favourites-wrapper">
+                {searchFavourites.map(item => {
+                    return (
+                        <ShopItem
+                            image={item.image}
+                            key={item.id}
+                            id={item.id}
+                            name={item.name}
+                            price={item.price}
+                            addedToCart={item.addedToCart}
+                            isFavourite={item.isFavourite}
+                            description={item.description}
+                            handleClickIsFavourite={handleClickIsFavourite}
+                        />
+                    )
+                })}
+            </div>
         </div>
     )
 }
