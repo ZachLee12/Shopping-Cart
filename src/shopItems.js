@@ -11,7 +11,7 @@ export const itemList = [{
     id: uniqid(),
     price: '19.99 CHF',
     addedToCart: false,
-    isFavourite: false,
+    isFavourite: true,
     description: 'This is a sample description about the ShopItem.'
 }, {
     image: Clothes1,
@@ -45,7 +45,7 @@ export const itemList = [{
     id: uniqid(),
     price: '12.34 CHF',
     addedToCart: false,
-    isFavourite: false,
+    isFavourite: true,
     description: 'This is a sample description about the ShopItem.'
 }, {
     image: Clothes4,

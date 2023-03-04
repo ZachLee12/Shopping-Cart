@@ -28,6 +28,23 @@ export default function Favourites() {
         })
     }
 
+    const handleClickAddToCart = (e) => {
+        const toggleAddToCart = (item) => {
+            return Object.assign(item, {
+                addedToCart: !item.addedToCart
+            })
+        }
+
+        let itemToChangeIndex = favourite.itemList.findIndex(item => item.id === e.target.id)
+        let copyList = [...favourite.itemList]
+        copyList[itemToChangeIndex] = toggleAddToCart(copyList[itemToChangeIndex])
+
+        setFavourite({
+            ...favourite,
+            itemList: copyList
+        })
+    }
+
     useEffect(() => {
         // console.log('COMPONENT MOUNTED')
         // console.log(favourite)
@@ -55,6 +72,7 @@ export default function Favourites() {
                             isFavourite={item.isFavourite}
                             description={item.description}
                             handleClickIsFavourite={handleClickIsFavourite}
+                            handleClickAddToCart={handleClickAddToCart}
                         />
                     )
                 })}
