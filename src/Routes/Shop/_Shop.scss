@@ -1,13 +1,19 @@
-@mixin gridCenter {
+$grid-row-gap: 20px;
+
+@mixin gridItemsCenter {
     display: grid;
     justify-items: center;
     align-items: center;
 }
 
-.shop-items-wrapper {
-    @include gridCenter();
-    grid-template: 1fr / 1fr 1fr;
 
+.shop-items-wrapper {
+    @include gridItemsCenter();
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+    grid-template-rows: auto;
+    row-gap: $grid-row-gap;
     //.ShopItem is in _ShopItem.scss 
 
 }

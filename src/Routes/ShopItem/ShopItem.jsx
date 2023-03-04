@@ -8,7 +8,7 @@ export default function ShopItem(props) {
                 <figcaption>
                     <p className="ShopItem-name">{props.name}</p>
                     <p className="ShopItem-description">{props.description}</p>
-                    <p className="price">19.99 CHF</p>
+                    <p className="price">{props.price}</p>
                     <span className="favourite-star"
                         id={props.id}
                         onClick={props.handleClickIsFavourite}

@@ -1,6 +1,9 @@
 import React from "react";
 import ShopItem from "../ShopItem/ShopItem";
 import PlaceholderImage from '../../assets/images/placeholderImage.jpg'
+import Clothes1 from '../../assets/images/clothes1.jpg'
+import Clothes2 from '../../assets/images/clothes2.webp'
+import Clothes3 from '../../assets/images/clothes3.webp'
 import uniqid from 'uniqid';
 
 
@@ -16,14 +19,40 @@ export default function Shop() {
             isFavourite: false,
             description: 'This is a sample description about the ShopItem.'
         }, {
-            image: PlaceholderImage,
+            image: Clothes1,
             name: 'Sample Item',
             id: uniqid(),
-            price: '19.99 CHF',
+            price: '10.20 CHF',
             addedToCart: false,
             isFavourite: false,
             description: 'This is a sample description about the ShopItem.'
-        }]
+        },
+        {
+            image: Clothes2,
+            name: 'Sample Item',
+            id: uniqid(),
+            price: '12.34 CHF',
+            addedToCart: false,
+            isFavourite: false,
+            description: 'This is a sample description about the ShopItem.'
+        },
+        {
+            image: Clothes3,
+            name: 'Sample Item',
+            id: uniqid(),
+            price: '12.34 CHF',
+            addedToCart: false,
+            isFavourite: false,
+            description: 'This is a sample description about the ShopItem.'
+        },{
+            image: Clothes3,
+            name: 'Sample Item',
+            id: uniqid(),
+            price: '12.34 CHF',
+            addedToCart: false,
+            isFavourite: false,
+            description: 'This is a sample description about the ShopItem.'
+        },]
     }
 
 
