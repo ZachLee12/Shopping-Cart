@@ -1,10 +1,8 @@
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import './Root.scss'
 import { Outlet, Link } from 'react-router-dom'
 
 function Root() {
-
-
   return (
     <div id="Root">
       <header className='header'>

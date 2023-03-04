@@ -1,77 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ShopItem from "../ShopItem/ShopItem";
-import PlaceholderImage from '../../assets/images/placeholderImage.jpg'
-import Clothes1 from '../../assets/images/clothes1.jpg'
-import Clothes2 from '../../assets/images/clothes2.webp'
-import Clothes3 from '../../assets/images/clothes3.webp'
-import Clothes4 from '../../assets/images/clothes4.jpg'
-import uniqid from 'uniqid';
+import {
+    itemList as importedItemList,
+    searchItems
+} from "../../shopItems";
 
 
 export default function Shop() {
 
     const initialState = {
-        itemList: [{
-            image: PlaceholderImage,
-            name: 'Sample Item',
-            id: uniqid(),
-            price: '19.99 CHF',
-            addedToCart: false,
-            isFavourite: false,
-            description: 'This is a sample description about the ShopItem.'
-        }, {
-            image: Clothes1,
-            name: 'Sample Item',
-            id: uniqid(),
-            price: '10.20 CHF',
-            addedToCart: false,
-            isFavourite: false,
-            description: 'This is a sample description about the ShopItem.'
-        },
-        {
-            image: Clothes2,
-            name: 'Sample Item',
-            id: uniqid(),
-            price: '12.34 CHF',
-            addedToCart: false,
-            isFavourite: false,
-            description: 'This is a sample description about the ShopItem.'
-        },
-        {
-            image: Clothes3,
-            name: 'Sample Item',
-            id: uniqid(),
-            price: '12.34 CHF',
-            addedToCart: false,
-            isFavourite: false,
-            description: 'This is a sample description about the ShopItem.'
-        }, {
-            image: Clothes3,
-            name: 'Sample Item',
-            id: uniqid(),
-            price: '12.34 CHF',
-            addedToCart: false,
-            isFavourite: false,
-            description: 'This is a sample description about the ShopItem.'
-        }, {
-            image: Clothes4,
-            name: 'Sample Item',
-            id: uniqid(),
-            price: '12.34 CHF',
-            addedToCart: false,
-            isFavourite: false,
-            description: 'This is a sample description about the ShopItem.'
-        }, {
-            image: Clothes3,
-            name: 'Sample Item',
-            id: uniqid(),
-            price: '12.34 CHF',
-            addedToCart: false,
-            isFavourite: false,
-            description: 'This is a sample description about the ShopItem.'
-        },]
+        itemList: importedItemList
     }
-
 
     const [shop, setShop] = React.useState(initialState)
 
@@ -110,6 +49,16 @@ export default function Shop() {
         })
     }
 
+    useEffect(() => {
+        console.log(searchItems('good'))
+
+        return (
+            () => {
+                console.log('UNMOUNT')
+            }
+        )
+    })
+
     return (
         <div id='Shop'>
             <h1>Shop page</h1>
@@ -122,6 +71,7 @@ export default function Shop() {
                             image={item.image}
                             key={item.id}
                             id={item.id}
+                            name={item.name}
                             price={item.price}
                             addedToCart={item.addedToCart}
                             isFavourite={item.isFavourite}
