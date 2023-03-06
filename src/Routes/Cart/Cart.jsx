@@ -15,7 +15,7 @@ export default function Cart() {
     const handleClickIsFavourite = (e) => {
         const toggleIsFavourite = (item) => {
             return Object.assign(item, {
-                addedToCart: !item.addedToCart,
+                isFavourite: !item.isFavourite,
             })
         }
 
