@@ -5,7 +5,7 @@ import {
     searchItems
 } from "../../shopItems";
 
-import { Form, useLoaderData } from 'react-router-dom'
+import { Form, useLoaderData, useNavigate } from 'react-router-dom'
 
 export function loader({ request }) {
     const url = new URL(request.url)
@@ -19,6 +19,8 @@ export function loader({ request }) {
 }
 
 export default function Shop() {
+
+    const navigatePath = useNavigate();
     //note that due to SHALLOW COPYING with filter(),
     //all itemLists here are IN SYNC with their states
     //this means that searchedItemList, fullItemList and initialState all have the same reference point
@@ -110,7 +112,10 @@ export default function Shop() {
                         )
                     }
                     )
-                    : <h1>No Items were found.</h1>}
+                    : <div>
+                        <h1>No Items were found.</h1>
+                        <button onClick={() => navigatePath(-1)}>Go Back</button>
+                    </div>}
             </div>
 
         </div>

@@ -4,7 +4,8 @@
 './Routes/Contact/_Contact',
 './Routes/Error/_Error.scss',
 './Routes/Shop/_Shop.scss',
-'./Routes/Favourites/Favourites';
+'./Routes/Favourites/Favourites',
+'./Routes/Cart/Cart';
 
 $text-color: #313131;
 $text-color-hover: #5694c6;
@@ -75,6 +76,8 @@ body {
     height: calc(100vh - $header-height);
 
     .sidebar {
+        display: flex;
+        flex-direction: column;
         flex-shrink: 0;
         width: 300px;
         background-color: beige;

@@ -5,6 +5,7 @@ import About from './Routes/About/About'
 import Contact from './Routes/Contact/Contact'
 import ErrorPage from './Routes/Error/Error'
 import Shop from './Routes/Shop/Shop'
+import Cart from './Routes/Cart/Cart'
 
 import {
   createBrowserRouter,
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: '/favourites',
         element: <Favourites />
+      },
+      {
+        path: '/cart',
+        element: <Cart />
       }
     ]
   },

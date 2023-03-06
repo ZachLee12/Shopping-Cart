@@ -1,29 +1,30 @@
-import { itemList as fullItemList } from "../../shopItems";
-import ShopItem from "../ShopItem/ShopItem";
-import React, { useEffect } from "react";
+import { itemList as fullItemList } from "../../shopItems"
+import ShopItem from "../ShopItem/ShopItem"
+import React, { useEffect } from 'react';
 
-export default function Favourites() {
-    const searchFavourites = (() => {
-        return fullItemList.filter(item => item.isFavourite)
+export default function Cart() {
+    const searchCart = (() => {
+        return fullItemList.filter(item => item.addedToCart)
     })();
 
-    const [favourite, setFavourite] = React.useState({
-        itemList: searchFavourites
+    const [cart, setCart] = React.useState({
+        itemList: searchCart
     });
+
 
     const handleClickIsFavourite = (e) => {
         const toggleIsFavourite = (item) => {
             return Object.assign(item, {
-                isFavourite: !item.isFavourite
+                addedToCart: !item.addedToCart,
             })
         }
 
-        let itemToChangeIndex = favourite.itemList.findIndex(item => item.id === e.target.id)
-        let copyList = [...favourite.itemList]
+        let itemToChangeIndex = cart.itemList.findIndex(item => item.id === e.target.id)
+        let copyList = [...cart.itemList]
         copyList[itemToChangeIndex] = toggleIsFavourite(copyList[itemToChangeIndex])
 
-        setFavourite({
-            ...favourite.itemList,
+        setCart({
+            ...cart.itemList,
             itemList: copyList
         })
     }
@@ -35,32 +36,21 @@ export default function Favourites() {
             })
         }
 
-        let itemToChangeIndex = favourite.itemList.findIndex(item => item.id === e.target.id)
-        let copyList = [...favourite.itemList]
+        let itemToChangeIndex = cart.itemList.findIndex(item => item.id === e.target.id)
+        let copyList = [...cart.itemList]
         copyList[itemToChangeIndex] = toggleAddToCart(copyList[itemToChangeIndex])
 
-        setFavourite({
-            ...favourite.itemList,
+        setCart({
+            ...cart.itemList,
             itemList: copyList
         })
     }
 
-    useEffect(() => {
-        // console.log('COMPONENT MOUNTED')
-        // console.log(favourite)
-
-        return () => {
-            // console.log('COMPONENT UNMOUNTED')
-            // console.log(favourite)
-        }
-
-    }, [])
-
     return (
-        <div id="Favourites">
-            <h1>Favourite</h1>
-            <div className="favourites-wrapper">
-                {searchFavourites.map(item => {
+        <div id='Cart'>
+            <h1>Cart</h1>
+            <div className="cart-wrapper">
+                {searchCart.map(item => {
                     return (
                         <ShopItem
                             image={item.image}

@@ -29,8 +29,9 @@ export default function Root() {
 
       <section className="main-content-wrapper">
         <div className='sidebar'>
-          
+
           <Link to={'/favourites'}>Favourites</Link>
+          <Link to={'/cart'}>My Cart</Link>
         </div>
 
         <div className="outlet-wrapper">
