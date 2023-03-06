@@ -1,4 +1,6 @@
 import React from "react";
+import FilledStar from '../../assets/images/filled-star.png'
+import EmptyStar from '../../assets/images/empty-star.png'
 
 export default function ShopItem(props) {
     return (
@@ -9,10 +11,11 @@ export default function ShopItem(props) {
                     <p className="ShopItem-name">{props.name}</p>
                     <p className="ShopItem-description">{props.description}</p>
                     <p className="price">{props.price}</p>
-                    <span className="favourite-star"
+                    <img className="favourite-star"
                         id={props.id}
                         onClick={props.handleClickIsFavourite}
-                    >{props.isFavourite ? '⭐' : '☆'}</span>
+                        src={props.isFavourite ? FilledStar : EmptyStar}
+                    />
                     <button id={props.id} onClick={props.handleClickAddToCart}>{props.addedToCart ? '✔ Added to Cart' : 'Add to Cart'}</button>
                 </figcaption>
             </figure>

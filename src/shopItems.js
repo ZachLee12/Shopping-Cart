@@ -10,6 +10,7 @@ export const itemList = [{
     name: 'Nice Image',
     id: uniqid(),
     price: '19.99 CHF',
+    units: 1,
     addedToCart: false,
     isFavourite: true,
     description: 'This is a sample description about the ShopItem.'
@@ -18,6 +19,7 @@ export const itemList = [{
     name: 'Good clothes',
     id: uniqid(),
     price: '10.20 CHF',
+    units: 1,
     addedToCart: false,
     isFavourite: false,
     description: 'This is a sample description about the ShopItem.'
@@ -27,6 +29,7 @@ export const itemList = [{
     name: 'Amazing Item',
     id: uniqid(),
     price: '12.34 CHF',
+    units: 1,
     addedToCart: false,
     isFavourite: false,
     description: 'This is a sample description about the ShopItem.'
@@ -36,6 +39,7 @@ export const itemList = [{
     name: 'Sample Clothes',
     id: uniqid(),
     price: '12.34 CHF',
+    units: 1,
     addedToCart: false,
     isFavourite: false,
     description: 'This is a sample description about the ShopItem.'
@@ -44,6 +48,7 @@ export const itemList = [{
     name: 'Clothes for sale',
     id: uniqid(),
     price: '12.34 CHF',
+    units: 1,
     addedToCart: false,
     isFavourite: true,
     description: 'This is a sample description about the ShopItem.'
@@ -52,6 +57,7 @@ export const itemList = [{
     name: 'Some random clothes',
     id: uniqid(),
     price: '12.34 CHF',
+    units: 1,
     addedToCart: false,
     isFavourite: false,
     description: 'This is a sample description about the ShopItem.'
@@ -60,6 +66,7 @@ export const itemList = [{
     name: 'Clothes with more clothes',
     id: uniqid(),
     price: '12.34 CHF',
+    units: 1,
     addedToCart: false,
     isFavourite: false,
     description: 'This is a sample description about the ShopItem.'

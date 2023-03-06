@@ -1,0 +1,5 @@
+@import '../Shop/Shop';
+
+.cart-wrapper {
+    @extend .shop-items-wrapper; 
+}

@@ -68,6 +68,7 @@ export default function Favourites() {
                             id={item.id}
                             name={item.name}
                             price={item.price}
+                            units={item.units}
                             addedToCart={item.addedToCart}
                             isFavourite={item.isFavourite}
                             description={item.description}

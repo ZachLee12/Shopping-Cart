@@ -32,5 +32,8 @@ $card-background: #b1aaaa;
 }
 
 .favourite-star {
-    background-color: yellow;
+    border: 2px solid red;
+    user-select: none;
+    width: 30px;
+
 }
