@@ -1,6 +1,6 @@
 import { itemList as fullItemList } from "../../shopItems"
 import ShopItem from "../ShopItem/ShopItem"
-import React, { useEffect } from 'react';
+import React from 'react';
 
 export default function Cart() {
     const searchCart = (() => {
