@@ -7,8 +7,6 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -30,6 +28,5 @@
     "gh-pages": "^5.0.0",
     "sass": "^1.58.3",
     "vite": "^4.1.0"
-  },
-  "homepage": "http://ZachLee12.github.io/Shopping-Cart"
+  }
 }
