@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { createContext, useContext, useEffect } from "react";
 import FilledStar from '../../assets/images/filled-star.png'
 import EmptyStar from '../../assets/images/empty-star.png'
 import { searchItems } from "../../shopItems";
@@ -6,23 +6,14 @@ import { searchItems } from "../../shopItems";
 export default function ShopItem(props) {
 
     let targetItem = searchItems(props.name)[0]
-
     const [shopItem, setShopItem] = React.useState(targetItem)
 
     const handleChangeUnits = (e) => {
-
-            setShopItem({
-                ...shopItem,
-                units: e.target.value,
-            })
-        
-    }
-
-    const calculateTotalPrice = (units, price) => {
-        const unitsTypeNumber = Number(units)
-        const priceTypeNumber = Number(price)
-
-        return unitsTypeNumber * priceTypeNumber
+        setShopItem({
+            ...shopItem,
+            units: e.target.value,
+            totalPrice: (e.target.value * shopItem.price).toFixed(2)
+        })
     }
 
     useEffect(() => {
@@ -44,14 +35,14 @@ export default function ShopItem(props) {
                             <p>Units: {shopItem.units} </p>
                             <input
                                 min={1}
+                                max={100}
                                 type="number"
                                 onChange={handleChangeUnits}
                                 defaultValue={shopItem.units}
                             />
-                            <p>Total price: {calculateTotalPrice(shopItem.units, props.price).toFixed(2)}</p>
+                            <p>Total: {shopItem.totalPrice}</p>
                         </div>
                     }
-
 
                     <img className="favourite-star"
                         id={props.id}

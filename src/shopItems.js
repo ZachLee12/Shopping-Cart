@@ -12,6 +12,7 @@ export const itemList = [{
     price: 19.99,
     displayAsCartItem: false,
     units: 1,
+    totalPrice: 19.99,
     addedToCart: true,
     isFavourite: true,
     description: 'This is a sample description about the ShopItem.'
@@ -22,6 +23,7 @@ export const itemList = [{
     price: 10.20,
     displayAsCartItem: false,
     units: 1,
+    totalPrice: 10.20,
     addedToCart: true,
     isFavourite: false,
     description: 'This is a sample description about the ShopItem.'
@@ -33,6 +35,7 @@ export const itemList = [{
     price: 12.34,
     displayAsCartItem: false,
     units: 1,
+    totalPrice: 12.34,
     addedToCart: false,
     isFavourite: false,
     description: 'This is a sample description about the ShopItem.'
@@ -44,6 +47,7 @@ export const itemList = [{
     price: 12.34,
     displayAsCartItem: false,
     units: 1,
+    totalPrice: 12.34,
     addedToCart: false,
     isFavourite: false,
     description: 'This is a sample description about the ShopItem.'
@@ -54,6 +58,7 @@ export const itemList = [{
     price: 12.34,
     displayAsCartItem: false,
     units: 1,
+    totalPrice: 12.34,
     addedToCart: false,
     isFavourite: true,
     description: 'This is a sample description about the ShopItem.'
@@ -64,6 +69,7 @@ export const itemList = [{
     price: 16.99,
     displayAsCartItem: false,
     units: 1,
+    totalPrice: 16.99,
     addedToCart: false,
     isFavourite: false,
     description: 'This is a sample description about the ShopItem.'
@@ -72,6 +78,7 @@ export const itemList = [{
     name: 'Clothes with more clothes',
     id: uniqid(),
     price: 12.34,
+    totalPrice: 12.34,
     displayAsCartItem: false,
     units: 1,
     addedToCart: false,
