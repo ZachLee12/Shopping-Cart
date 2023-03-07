@@ -1,11 +1,14 @@
-import React, { useEffect } from "react"
+import React from 'react'
 
 export default function Checkout({ itemList, renderCheckout, handleClickUnmountCheckout, }) {
 
-
-    useEffect(() => {
-
-    })
+    const getFinalPrice = (list) => {
+        let totalItemPrices = []
+        list.forEach((item) => {
+            totalItemPrices.push(Number(item.totalPrice))
+        })
+        return (totalItemPrices.reduce((acc, curr) => acc += curr)).toFixed(2)
+    }
 
     return (
         <React.Fragment>
@@ -20,6 +23,8 @@ export default function Checkout({ itemList, renderCheckout, handleClickUnmountC
                                     <img src={item.image} alt="shop-item-image" />
                                 </div>
                             )}
+                            <p>Final Price: {getFinalPrice(itemList)}</p>
+
                         </div>
                         <button
                             onClick={handleClickUnmountCheckout}
