@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import ShopItem from "../ShopItem/ShopItem";
+import ShopItem from "../../Components/ShopItem/ShopItem";
 import {
     itemList as fullItemList,
     searchItems
@@ -111,7 +111,8 @@ export default function Shop() {
                     : <div>
                         <h1>No Items were found.</h1>
                 
-                    </div>}
+                    </div>
+                }
             </div>
 
         </div>

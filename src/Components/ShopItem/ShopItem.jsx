@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import FilledStar from '../../assets/images/filled-star.png'
 import EmptyStar from '../../assets/images/empty-star.png'
 import { searchItems } from "../../shopItems";
-import { useLocation } from 'react-router-dom';
 
 export default function ShopItem(props) {
 
@@ -12,10 +11,11 @@ export default function ShopItem(props) {
 
     const handleChangeUnits = (e) => {
 
-        setShopItem({
-            ...shopItem,
-            units: e.target.value,
-        })
+            setShopItem({
+                ...shopItem,
+                units: e.target.value,
+            })
+        
     }
 
     const calculateTotalPrice = (units, price) => {
@@ -43,6 +43,7 @@ export default function ShopItem(props) {
                         <div className="cart-information-wrapper">
                             <p>Units: {shopItem.units} </p>
                             <input
+                                min={1}
                                 type="number"
                                 onChange={handleChangeUnits}
                                 defaultValue={shopItem.units}
@@ -57,7 +58,7 @@ export default function ShopItem(props) {
                         onClick={props.handleClickIsFavourite}
                         src={props.isFavourite ? FilledStar : EmptyStar}
                     />
-                    <button id={props.id} onClick={props.handleClickAddToCart}>{props.addedToCart ? '✔ Added to Cart' : 'Add to Cart'}</button>
+                    <button className="added-to-cart-button" id={props.id} onClick={props.handleClickAddToCart}>{props.addedToCart ? '✔ Added to Cart' : 'Add to Cart'}</button>
                 </figcaption>
             </figure>
         </React.Fragment>

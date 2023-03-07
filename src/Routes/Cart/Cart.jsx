@@ -1,6 +1,7 @@
 import { itemList as fullItemList } from "../../shopItems"
-import ShopItem from "../ShopItem/ShopItem"
+import ShopItem from "../../Components/ShopItem/ShopItem"
 import React, { useEffect } from 'react';
+import Checkout from "../../Components/Checkout/Checkout";
 
 export default function Cart() {
     const searchCart = (() => {
@@ -9,7 +10,7 @@ export default function Cart() {
 
     const [cart, setCart] = React.useState({
         itemList: searchCart,
-        totalPrice: 0,
+        renderCheckout: false,
     });
 
     const handleClickIsFavourite = (e) => {
@@ -43,6 +44,20 @@ export default function Cart() {
         setCart({
             ...cart.itemList,
             itemList: copyList
+        })
+    }
+
+    const handleClickMountCheckout = (e) => {
+        setCart({
+            ...cart,
+            renderCheckout: true,
+        })
+    }
+
+    const handleClickUnmountCheckout = (e) => {
+        setCart({
+            ...cart,
+            renderCheckout: false,
         })
     }
 
@@ -95,6 +110,19 @@ export default function Cart() {
                     )
                 })}
             </div>
+
+
+            <button
+                onClick={handleClickMountCheckout}
+                className="checkout-button">
+                Checkout
+            </button>
+
+            <Checkout
+                itemList={cart.itemList}
+                renderCheckout={cart.renderCheckout}
+                handleClickUnmountCheckout={handleClickUnmountCheckout}
+            />
         </div>
     )
 }

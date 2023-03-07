@@ -1,5 +1,5 @@
 import { itemList as fullItemList } from "../../shopItems";
-import ShopItem from "../ShopItem/ShopItem";
+import ShopItem from "../../Components/ShopItem/ShopItem";
 import React, { useEffect } from "react";
 
 export default function Favourites() {
