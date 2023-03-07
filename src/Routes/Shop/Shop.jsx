@@ -5,7 +5,7 @@ import {
     searchItems
 } from "../../shopItems";
 
-import { Form, useLoaderData, useNavigate } from 'react-router-dom'
+import { Form, useLoaderData, useNavigate, useSubmit } from 'react-router-dom'
 
 export function loader({ request }) {
     const url = new URL(request.url)
@@ -15,16 +15,15 @@ export function loader({ request }) {
     if (q === '' || !q) {
         q = ' '
     }
-    return { searchedItemList: searchItems(q) }
+    return { searchedItemList: searchItems(q), q }
 }
 
 export default function Shop() {
-
-    const navigatePath = useNavigate();
+    const submit = useSubmit();
     //note that due to SHALLOW COPYING with filter(),
     //all itemLists here are IN SYNC with their states
     //this means that searchedItemList, fullItemList and initialState all have the same reference point
-    const { searchedItemList } = useLoaderData();
+    const { searchedItemList, q } = useLoaderData();
 
     const initialState = {
         itemList: fullItemList
@@ -67,16 +66,6 @@ export default function Shop() {
         })
     }
 
-    useEffect(() => {
-        // console.log(searchedItemList)
-
-        return (
-            () => {
-                // console.log('UNMOUNT')
-            }
-        )
-    })
-
     return (
         <div id='Shop'>
             <h1>Shop page</h1>
@@ -88,6 +77,12 @@ export default function Shop() {
                         type="search"
                         id='search-bar'
                         name='q'
+                        onChange={(e) => {
+                            const isFirstSearch = q == null;
+                            submit(e.currentTarget.form, {
+                                replace: !isFirstSearch
+                            })
+                        }}
                     />
                 </label>
             </Form>
@@ -115,7 +110,7 @@ export default function Shop() {
                     )
                     : <div>
                         <h1>No Items were found.</h1>
-                        <button onClick={() => navigatePath(-1)}>Go Back</button>
+                
                     </div>}
             </div>
 
