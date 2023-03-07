@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 export default function ShopItem(props) {
 
-    const targetItem = searchItems(props.name)[0]
+    let targetItem = searchItems(props.name)[0]
 
     const [shopItem, setShopItem] = React.useState(targetItem)
 
@@ -26,8 +26,9 @@ export default function ShopItem(props) {
     }
 
     useEffect(() => {
-       
-    })
+        // to keep it in sync with central shopItems.js
+        targetItem = Object.assign(targetItem, shopItem);
+    }, [shopItem])
 
     return (
         <React.Fragment>

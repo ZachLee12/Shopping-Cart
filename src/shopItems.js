@@ -22,7 +22,7 @@ export const itemList = [{
     price: 10.20,
     displayAsCartItem: false,
     units: 1,
-    addedToCart: false,
+    addedToCart: true,
     isFavourite: false,
     description: 'This is a sample description about the ShopItem.'
 },
