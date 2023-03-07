@@ -9,13 +9,8 @@ export default function Cart() {
 
     const [cart, setCart] = React.useState({
         itemList: searchCart,
-        totalPrice: 0
+        totalPrice: 0,
     });
-
-    const unitsRef = React.useRef();
-
-
-
 
     const handleClickIsFavourite = (e) => {
         const toggleIsFavourite = (item) => {
@@ -52,16 +47,30 @@ export default function Cart() {
     }
 
     useEffect(() => {
-        searchCart.forEach(item => {
+        let activatedCartDisplayList = [...cart.itemList]
+        activatedCartDisplayList.forEach(item => {
             item.displayAsCartItem = true;
         })
-        return () => {
-            searchCart.forEach(item => {
-                item.displayAsCartItem = false;
 
+        setCart({
+            ...cart,
+            itemList: activatedCartDisplayList,
+        })
+
+
+        return () => {
+            let deactivatedCartDisplayList = [...cart.itemList]
+            deactivatedCartDisplayList.forEach(item => {
+                item.displayAsCartItem = false;
+            })
+
+            setCart({
+                ...cart,
+                itemList: deactivatedCartDisplayList,
             })
         }
-    })
+    }, [])
+
 
     return (
         <div id='Cart'>
@@ -76,6 +85,7 @@ export default function Cart() {
                             name={item.name}
                             price={item.price}
                             units={item.units}
+                            displayAsCartItem={item.displayAsCartItem}
                             addedToCart={item.addedToCart}
                             isFavourite={item.isFavourite}
                             description={item.description}

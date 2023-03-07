@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import FilledStar from '../../assets/images/filled-star.png'
 import EmptyStar from '../../assets/images/empty-star.png'
 import { searchItems } from "../../shopItems";
+import { useLocation } from 'react-router-dom';
 
 export default function ShopItem(props) {
 
@@ -25,8 +26,7 @@ export default function ShopItem(props) {
     }
 
     useEffect(() => {
-        // console.log(calculateTotalPrice(1,10))
-        // console.log(targetItem)
+       
     })
 
     return (
@@ -38,15 +38,17 @@ export default function ShopItem(props) {
                     <p className="ShopItem-description">{props.description}</p>
                     <p className="price">{props.price}</p>
 
-                    <div className="cart-information-wrapper">
-                        <p>Units: {shopItem.units} </p>
-                        <input
-                            type="number"
-                            onChange={handleChangeUnits}
-                            defaultValue={shopItem.units}
-                        />
-                        <p>Total price: {calculateTotalPrice(shopItem.units, props.price)}</p>
-                    </div>
+                    {props.displayAsCartItem &&
+                        <div className="cart-information-wrapper">
+                            <p>Units: {shopItem.units} </p>
+                            <input
+                                type="number"
+                                onChange={handleChangeUnits}
+                                defaultValue={shopItem.units}
+                            />
+                            <p>Total price: {calculateTotalPrice(shopItem.units, props.price).toFixed(2)}</p>
+                        </div>
+                    }
 
 
                     <img className="favourite-star"
