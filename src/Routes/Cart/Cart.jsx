@@ -1,6 +1,6 @@
 import { itemList as fullItemList } from "../../shopItems"
 import ShopItem from "../ShopItem/ShopItem"
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function Cart() {
     const searchCart = (() => {
@@ -8,8 +8,13 @@ export default function Cart() {
     })();
 
     const [cart, setCart] = React.useState({
-        itemList: searchCart
+        itemList: searchCart,
+        totalPrice: 0
     });
+
+    const unitsRef = React.useRef();
+
+
 
 
     const handleClickIsFavourite = (e) => {
@@ -24,7 +29,7 @@ export default function Cart() {
         copyList[itemToChangeIndex] = toggleIsFavourite(copyList[itemToChangeIndex])
 
         setCart({
-            ...cart.itemList,
+            ...cart,
             itemList: copyList
         })
     }
@@ -45,6 +50,18 @@ export default function Cart() {
             itemList: copyList
         })
     }
+
+    useEffect(() => {
+        searchCart.forEach(item => {
+            item.displayAsCartItem = true;
+        })
+        return () => {
+            searchCart.forEach(item => {
+                item.displayAsCartItem = false;
+
+            })
+        }
+    })
 
     return (
         <div id='Cart'>

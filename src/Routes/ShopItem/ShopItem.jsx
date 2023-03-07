@@ -1,8 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FilledStar from '../../assets/images/filled-star.png'
 import EmptyStar from '../../assets/images/empty-star.png'
+import { searchItems } from "../../shopItems";
 
 export default function ShopItem(props) {
+
+    const targetItem = searchItems(props.name)[0]
+
+    const [shopItem, setShopItem] = React.useState(targetItem)
+
+    const handleChangeUnits = (e) => {
+
+        setShopItem({
+            ...shopItem,
+            units: e.target.value,
+        })
+    }
+
+    const calculateTotalPrice = (units, price) => {
+        const unitsTypeNumber = Number(units)
+        const priceTypeNumber = Number(price)
+
+        return unitsTypeNumber * priceTypeNumber
+    }
+
+    useEffect(() => {
+        // console.log(calculateTotalPrice(1,10))
+        // console.log(targetItem)
+    })
+
     return (
         <React.Fragment>
             <figure className="ShopItem">
@@ -11,6 +37,18 @@ export default function ShopItem(props) {
                     <p className="ShopItem-name">{props.name}</p>
                     <p className="ShopItem-description">{props.description}</p>
                     <p className="price">{props.price}</p>
+
+                    <div className="cart-information-wrapper">
+                        <p>Units: {shopItem.units} </p>
+                        <input
+                            type="number"
+                            onChange={handleChangeUnits}
+                            defaultValue={shopItem.units}
+                        />
+                        <p>Total price: {calculateTotalPrice(shopItem.units, props.price)}</p>
+                    </div>
+
+
                     <img className="favourite-star"
                         id={props.id}
                         onClick={props.handleClickIsFavourite}
