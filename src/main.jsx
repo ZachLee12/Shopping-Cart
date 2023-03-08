@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Root from './Root'
+import App from './App'
 import About from './Routes/About/About'
 import Contact from './Routes/Contact/Contact'
 import ErrorPage from './Routes/Error/Error'
@@ -8,16 +8,16 @@ import Shop from './Routes/Shop/Shop'
 import Cart from './Routes/Cart/Cart'
 
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from 'react-router-dom'
 import { loader as shopLoader } from './Routes/Shop/Shop'
 import Favourites from './Routes/Favourites/Favourites'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
-    element: <Root />,
+    element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {

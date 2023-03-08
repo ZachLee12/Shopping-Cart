@@ -1,11 +1,11 @@
-import './Root.scss'
+import './App.scss'
 import { Outlet, Link, Form } from 'react-router-dom'
 
 
-export default function Root() {
+export default function App() {
 
   return (
-    <div id="Root">
+    <div id="App">
       <header className='header'>
         <div>Root</div>
         <div className='nagivation-tabs-wrapper'>
