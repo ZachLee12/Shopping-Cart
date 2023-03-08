@@ -14,7 +14,7 @@ import {
 import { loader as shopLoader } from './Routes/Shop/Shop'
 import Favourites from './Routes/Favourites/Favourites'
 
-const router = createHashRouter([
+const hashRouter = createHashRouter([
   {
     path: '/',
     element: <App />,
@@ -48,6 +48,6 @@ const router = createHashRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={hashRouter} />
   </React.StrictMode>,
 )

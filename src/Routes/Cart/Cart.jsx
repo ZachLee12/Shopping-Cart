@@ -1,4 +1,4 @@
-import { itemList as fullItemList } from "../../shopItems"
+import { itemList as fullItemList, itemList } from "../../shopItems"
 import ShopItem from "../../Components/ShopItem/ShopItem"
 import React, { useEffect } from 'react';
 import Checkout from "../../Components/Checkout/Checkout";
@@ -11,6 +11,7 @@ export default function Cart() {
     const [cart, setCart] = React.useState({
         itemList: searchCart,
         renderCheckout: false,
+        stateChangeTest: false,
     });
 
     const handleClickIsFavourite = (e) => {
@@ -59,6 +60,15 @@ export default function Cart() {
             ...cart,
             renderCheckout: false,
         })
+        setTimeout(() => { console.log(cart.itemList) }, 0)
+    }
+
+    const handleClickStateTest = (e) => {
+        setCart({
+            ...cart,
+            stateChangeTest: !cart.stateChangeTest
+        })
+
     }
 
     useEffect(() => {
@@ -71,7 +81,6 @@ export default function Cart() {
             ...cart,
             itemList: activatedCartDisplayList,
         })
-
 
         return () => {
             let deactivatedCartDisplayList = [...cart.itemList]
@@ -89,6 +98,7 @@ export default function Cart() {
 
     return (
         <div id='Cart'>
+            <button onClick={handleClickStateTest}>State change test</button>
             <h1>Cart</h1>
             <div className="cart-wrapper">
                 {searchCart.map(item => {
@@ -119,7 +129,7 @@ export default function Cart() {
             </button>
 
             <Checkout
-                itemList={cart.itemList}
+                itemList={itemList}
                 renderCheckout={cart.renderCheckout}
                 handleClickUnmountCheckout={handleClickUnmountCheckout}
             />

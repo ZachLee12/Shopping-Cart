@@ -110,7 +110,6 @@ export default function Shop() {
                     )
                     : <div>
                         <h1>No Items were found.</h1>
-                
                     </div>
                 }
             </div>
