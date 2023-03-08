@@ -1,6 +1,10 @@
+@import '../ShopItem/ShopItem';
+
 $border-black : #000000;
 $Checkout-background-blue: #81d1db;
-$checkout-item-background-blue: #45afda;
+$checkout-item-background-blue: $card-background-color; //inherited from ShopItem.scss
+
+
 
 #Checkout-fullscreen-wrapper {
     display: block;
@@ -52,12 +56,30 @@ $checkout-item-background-blue: #45afda;
         gap: 10px;
 
         .checkout-item {
+            padding: 10px;
+            display: flex;
+            gap: 20px;
             background-color: $checkout-item-background-blue;
             border: 2px solid $border-black;
 
             & img {
                 width: 150px;
                 border-radius: 25px;
+
+            }
+
+            .checkout-item-details-wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                border: 2px solid red;
+                min-width: 200px;
+
+                &>* {
+                    flex: 1 1 0;
+
+                    padding-top: 2px;
+                }
 
             }
         }

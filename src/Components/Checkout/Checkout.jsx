@@ -33,11 +33,13 @@ export default function Checkout({ renderCheckout, handleClickUnmountCheckout, }
                     <div className="checkout-items-wrapper">
                         {searchCart.map(item =>
                             <div key={item.id} className='checkout-item'>
-                                <p>{item.name}</p>
-                                <img src={item.image} alt="shop-item-image" />
-                                <p>Unit price: {item.price}</p>
-                                <p>Units: {item.units}</p>
-                                <p>Total Price: {item.totalPrice}</p>
+                                <img className='checkout-item-image' src={item.image} alt="shop-item-image" />
+                                <div className="checkout-item-details-wrapper">
+                                    <p className='checkout-item-name'>{item.name}</p>
+                                    <p className='checkout-item-unit-price'>Unit price: {item.price}</p>
+                                    <p className='checkout-item-units'>Units: {item.units}</p>
+                                    <p className='checkout-item-total-price'>Total Price: {item.totalPrice}</p>
+                                </div>
                             </div>
                         )}
                         <p>Final Price: {getFinalPrice(searchCart)}</p>

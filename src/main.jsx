@@ -43,7 +43,6 @@ const hashRouter = createHashRouter([
       }
     ]
   },
-
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
