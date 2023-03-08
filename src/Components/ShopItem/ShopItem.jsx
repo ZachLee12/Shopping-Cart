@@ -16,6 +16,7 @@ export default function ShopItem(props) {
         })
     }
 
+    //sync data with shopItem.js
     useEffect(() => {
         // to keep it in sync with central shopItems.js
         targetItem = Object.assign(targetItem, shopItem);

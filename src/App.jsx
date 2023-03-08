@@ -1,4 +1,4 @@
-import './App.scss'
+import './_App.scss'
 import { Outlet, Link, Form } from 'react-router-dom'
 
 

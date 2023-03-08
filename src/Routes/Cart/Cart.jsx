@@ -63,14 +63,6 @@ export default function Cart() {
         setTimeout(() => { console.log(cart.itemList) }, 0)
     }
 
-    const handleClickStateTest = (e) => {
-        setCart({
-            ...cart,
-            stateChangeTest: !cart.stateChangeTest
-        })
-
-    }
-
     useEffect(() => {
         let activatedCartDisplayList = [...cart.itemList]
         activatedCartDisplayList.forEach(item => {
@@ -98,7 +90,6 @@ export default function Cart() {
 
     return (
         <div id='Cart'>
-            <button onClick={handleClickStateTest}>State change test</button>
             <h1>Cart</h1>
             <div className="cart-wrapper">
                 {searchCart.map(item => {
