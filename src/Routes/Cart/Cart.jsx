@@ -60,7 +60,6 @@ export default function Cart() {
             ...cart,
             renderCheckout: false,
         })
-        setTimeout(() => { console.log(cart.itemList) }, 0)
     }
 
     useEffect(() => {

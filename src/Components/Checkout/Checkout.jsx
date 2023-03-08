@@ -37,7 +37,7 @@ export default function Checkout({ renderCheckout, handleClickUnmountCheckout, }
                                 <img src={item.image} alt="shop-item-image" />
                                 <p>Unit price: {item.price}</p>
                                 <p>Units: {item.units}</p>
-                                <input type="number" />
+                                <p>Total Price: {item.totalPrice}</p>
                             </div>
                         )}
                         <p>Final Price: {getFinalPrice(searchCart)}</p>
@@ -48,6 +48,7 @@ export default function Checkout({ renderCheckout, handleClickUnmountCheckout, }
                         className="buy-now-button">
                         Buy now!
                     </button>
+                    <button onClick={handleClickUnmountCheckout} className="go-back-to-cart-button"> Go back to Cart</button>
                 </div>
             </div>
         </div>
