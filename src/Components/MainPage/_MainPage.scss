@@ -15,8 +15,40 @@ $shop-title-font-size: 3em;
     background-image: url($image-url);
     background-repeat: no-repeat;
     background-size: $size-type;
+    background-position: center center;
     @content;
-};
+}
+
+;
+
+@mixin liquid-effect {
+    background: linear-gradient(45deg, #00ffb6 0%, #000fa3);
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 0 20px #000;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: liquid 8s ease-in-out infinite;
+
+    @content;
+
+    @keyframes liquid {
+        0% {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            background-size: 100% 100%;
+        }
+
+        50% {
+            border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+            background-size: 300% 150%;
+        }
+
+        100% {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            background-size: 100% 100%;
+        }
+
+    }
+}
 
 #MainPage {
     @include flexCenter(row) {
@@ -25,16 +57,9 @@ $shop-title-font-size: 3em;
 
     ;
 
-
     border: 2px solid springgreen;
     width: 100%;
     height: 100%;
-
-    .vertical-line {
-        background-color: white;
-        width: 10px;
-        height: 300px;
-    }
 
     p.shop-title {
         margin: auto;
@@ -46,12 +71,19 @@ $shop-title-font-size: 3em;
         color: white;
     }
 
-    .image-container {
-        border-radius: 100%;
-        width: 200px;
-        height: 200px;
-        @include size-type-of-background(cover, './assets/images/placeholderImage.jpg');
-        border: 2px solid red;
+    .vertical-line {
+        background-color: white;
+        width: 10px;
+        height: 300px;
+    }
+
+    .shop-image {
+        @include liquid-effect() {
+            width: 250px;
+            height: 250px;
+        }
+
+        ;
     }
 
 }
