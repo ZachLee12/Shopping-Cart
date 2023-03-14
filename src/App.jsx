@@ -59,7 +59,7 @@ export default function App() {
 
         <section className="main-content-wrapper">
 
-          <MainPage shouldMount={mount.mainPage} />
+          {/* <MainPage shouldMount={mount.mainPage} /> */}
 
           <Link to={'/cart'} className='link-to-cart'>
             <div className="number-of-cart-items">

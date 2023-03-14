@@ -22,7 +22,7 @@ const hashRouter = createHashRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/',
+        path: '/', //duplicate path, so <MainPage /> will render as well!
         element: <MainPage />
       },
       {

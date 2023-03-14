@@ -1,11 +1,10 @@
-import React, { useEffect } from "react"
+import React from 'react'
 import PlaceholderImage from '../../assets/images/placeholderImage.jpg'
 
-export default function MainPage({ shouldMount }) {
-
+export default function MainPage() {
     return (
         <React.Fragment>
-            {shouldMount &&
+            {
                 <div id='MainPage'>
                     <div className="shop-introduction-container">
                         <p className='shop-title'>Main Shop</p>
