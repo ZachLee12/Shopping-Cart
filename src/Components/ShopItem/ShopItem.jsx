@@ -4,7 +4,6 @@ import EmptyStar from '../../assets/images/empty-star.png'
 import { searchItems } from "../../shopItems";
 
 export default function ShopItem(props) {
-
     let targetItem = searchItems(props.name)[0]
     const [shopItem, setShopItem] = React.useState(targetItem)
 

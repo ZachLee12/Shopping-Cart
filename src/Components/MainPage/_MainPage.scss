@@ -1,0 +1,57 @@
+//MAIN-PAGE
+$shop-title-font-size: 3em;
+
+@mixin flexCenter($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+    @content
+}
+
+;
+
+@mixin size-type-of-background($size-type, $image-url) {
+    background-image: url($image-url);
+    background-repeat: no-repeat;
+    background-size: $size-type;
+    @content;
+};
+
+#MainPage {
+    @include flexCenter(row) {
+        gap: 20px;
+    }
+
+    ;
+
+
+    border: 2px solid springgreen;
+    width: 100%;
+    height: 100%;
+
+    .vertical-line {
+        background-color: white;
+        width: 10px;
+        height: 300px;
+    }
+
+    p.shop-title {
+        margin: auto;
+        font-size: $shop-title-font-size;
+        color: wheat;
+    }
+
+    p.shop-description {
+        color: white;
+    }
+
+    .image-container {
+        border-radius: 100%;
+        width: 200px;
+        height: 200px;
+        @include size-type-of-background(cover, './assets/images/placeholderImage.jpg');
+        border: 2px solid red;
+    }
+
+}
