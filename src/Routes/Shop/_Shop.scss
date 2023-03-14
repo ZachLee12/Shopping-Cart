@@ -1,5 +1,9 @@
+
+
+$header-height: 80px; //change this value with $header-height in _App.scss!
 $grid-row-gap: 20px;
 $shop-background-color: #e2e8f0;
+
 
 @mixin gridItemsCenter {
     display: grid;
@@ -9,6 +13,24 @@ $shop-background-color: #e2e8f0;
 
 #Shop {
     background-color: $shop-background-color;
+    display: flex;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 300px;
+    background-color: beige;
+}
+
+.shop-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    height: calc(100vh - $header-height);
+    overflow-y: auto;
 }
 
 .shop-items-wrapper {

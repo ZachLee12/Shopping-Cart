@@ -13,6 +13,7 @@ import {
 } from 'react-router-dom'
 import { loader as shopLoader } from './Routes/Shop/Shop'
 import Favourites from './Routes/Favourites/Favourites'
+import MainPage from './Components/MainPage/MainPage'
 
 const hashRouter = createHashRouter([
   {
@@ -20,6 +21,10 @@ const hashRouter = createHashRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: '/',
+        element: <MainPage />
+      },
       {
         path: '/about',
         element: <About />

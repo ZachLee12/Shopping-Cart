@@ -1,6 +1,6 @@
 import './_App.scss';
 import { Outlet, Link } from 'react-router-dom';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { itemList as fullItemList } from './shopItems';
 import MainPage from './Components/MainPage/MainPage';
 
@@ -29,6 +29,10 @@ export default function App() {
     })
   }
 
+  useEffect(() => {
+
+  }, [mount.mainPage])
+
   return (
     <div id="App">
       <div className="opacity-film-wrapper">
@@ -56,11 +60,6 @@ export default function App() {
         <section className="main-content-wrapper">
 
           <MainPage shouldMount={mount.mainPage} />
-
-          {mount.sidebar &&
-            <div className='sidebar'>
-              <Link to={'/favourites'}>Favourites</Link>
-            </div>}
 
           <Link to={'/cart'} className='link-to-cart'>
             <div className="number-of-cart-items">

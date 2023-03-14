@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
 import PlaceholderImage from '../../assets/images/placeholderImage.jpg'
 
 export default function MainPage({ shouldMount }) {
+
     return (
         <React.Fragment>
             {shouldMount &&

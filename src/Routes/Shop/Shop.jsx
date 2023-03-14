@@ -5,6 +5,8 @@ import {
     searchItems
 } from "../../shopItems";
 
+import { Link } from "react-router-dom";
+
 import { Form, useLoaderData, useNavigate, useSubmit } from 'react-router-dom'
 
 export function loader({ request }) {
@@ -68,50 +70,55 @@ export default function Shop() {
 
     return (
         <div id='Shop'>
-            <h1>Shop page</h1>
-            <Form id='search-form'>
-                <label className='search-bar-label' htmlFor="search-bar">
-                    Search
-                    <input
-                        autoComplete="off"
-                        type="search"
-                        id='search-bar'
-                        name='q'
-                        onChange={(e) => {
-                            const isFirstSearch = q == null;
-                            submit(e.currentTarget.form, {
-                                replace: !isFirstSearch
-                            })
-                        }}
-                    />
-                </label>
-            </Form>
+            <div className='sidebar'>
+                <Link to={'/favourites'}>Favourites</Link>
+            </div>
 
 
-            <div className="shop-items-wrapper">
-                {searchedItemList.length > 0
-                    ? searchedItemList.map(item => {
-                        return (
-                            <ShopItem
-                                image={item.image}
-                                key={item.id}
-                                id={item.id}
-                                name={item.name}
-                                price={item.price}
-                                units={item.units}
-                                addedToCart={item.addedToCart}
-                                isFavourite={item.isFavourite}
-                                description={item.description}
-                                handleClickIsFavourite={handleClickIsFavourite}
-                                handleClickAddToCart={handleClickAddToCart}
-                            />
+            <div className="shop-content">
+                <h1>Shop page</h1>
+                <Form id='search-form'>
+                    <label className='search-bar-label' htmlFor="search-bar">
+                        Search
+                        <input
+                            autoComplete="off"
+                            type="search"
+                            id='search-bar'
+                            name='q'
+                            onChange={(e) => {
+                                const isFirstSearch = q == null;
+                                submit(e.currentTarget.form, {
+                                    replace: !isFirstSearch
+                                })
+                            }}
+                        />
+                    </label>
+                </Form>
+                <div className="shop-items-wrapper">
+                    {searchedItemList.length > 0
+                        ? searchedItemList.map(item => {
+                            return (
+                                <ShopItem
+                                    image={item.image}
+                                    key={item.id}
+                                    id={item.id}
+                                    name={item.name}
+                                    price={item.price}
+                                    units={item.units}
+                                    addedToCart={item.addedToCart}
+                                    isFavourite={item.isFavourite}
+                                    description={item.description}
+                                    handleClickIsFavourite={handleClickIsFavourite}
+                                    handleClickAddToCart={handleClickAddToCart}
+                                />
+                            )
+                        }
                         )
+                        : <div>
+                            <h1>No Items were found.</h1>
+                        </div>
                     }
-                    )
-                    : <div>
-                        <h1>No Items were found.</h1>
-                    </div>
-                }
+                </div>
             </div>
 
         </div>

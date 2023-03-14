@@ -148,14 +148,6 @@ body {
     // border: 2px solid greenyellow;
     height: calc(100vh - $header-height);
 
-    .sidebar {
-        display: flex;
-        flex-direction: column;
-        flex-shrink: 0;
-        width: 300px;
-        background-color: beige;
-    }
-
     .link-to-cart {
         //!important exception
         position: absolute !important;
