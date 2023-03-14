@@ -84,7 +84,7 @@ export default function Cart() {
                 itemList: deactivatedCartDisplayList,
             })
         }
-    }, [])
+    }, []) // [] causes this hook to run only on MOUNT
 
 
     return (

@@ -8,18 +8,38 @@
 './Routes/Cart/_Cart.scss',
 './Components/Checkout/_Checkout.scss';
 
+
 $text-color: #313131;
 $text-color-hover: #5694c6;
 $body-color: #d0c9b7;
 
+//HEADER
 $header-height: 50px;
+$header-background: #0369a1;
+
 //@functions, @mixins, @content, @extend (inheritance)
 //nesting, @import (name your partials starting with '_')
+@mixin center-background {
+    //make sure parent container has position relative/static before using
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    @content;
+}
+
+@mixin link-to-cart-style {
+    border: none;
+    border-radius: 100%;
+    padding: 0.5rem 0.75rem;
+    box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+    background-color: #efecec;
+    line-height: 1.5;
+    margin: 0;
+}
 
 html,
 body {
     margin: 0px;
-
     height: 100%;
 }
 
@@ -28,6 +48,7 @@ body {
     background-color: $body-color;
     display: flex;
     flex-direction: column;
+    background-color: rgb(127, 119, 119);
 }
 
 @mixin flexCenter($direction: row) {
@@ -39,7 +60,6 @@ body {
 }
 
 #App {
-    background-color: cadetblue;
     min-height: 100vh;
 }
 
@@ -52,6 +72,7 @@ body {
     height: $header-height;
     border: 2px solid red;
     padding: 0 20px;
+    background-color: $header-background;
 
     .nagivation-tabs-wrapper {
         @include flexCenter(row) {
@@ -69,7 +90,6 @@ body {
     }
 }
 
-
 .main-content-wrapper {
     display: flex;
     max-height: 100%;
@@ -82,6 +102,30 @@ body {
         flex-shrink: 0;
         width: 300px;
         background-color: beige;
+
+        .link-to-cart {
+            //!important exception
+            position: absolute !important;
+            right: 30px;
+            bottom: 10px;
+            height: 80px;
+            width: 80px;
+            background-image: url('./assets/images/shopping-cart.png');
+            background-size: 50px;
+            @include link-to-cart-style();
+            @include center-background();
+
+            transition:
+                transform 300ms ease-in-out,
+                box-shadow 300ms ease-in-out,
+                background-color 300ms ease-in-out;
+
+            &:hover {
+                transform: translateY(-10px);
+                background-color: #e1e0e0;
+            }
+        }
+
     }
 
     .outlet-wrapper {

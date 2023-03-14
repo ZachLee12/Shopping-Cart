@@ -23,6 +23,7 @@ $card-background-color: #d1d8de;
         height: 200px;
         width: 250px;
         border: 2px solid black;
+
     }
 
     .ShopItem-name {
@@ -35,5 +36,5 @@ $card-background-color: #d1d8de;
     border: 2px solid red;
     user-select: none;
     width: 30px;
-
+    cursor: pointer;
 }

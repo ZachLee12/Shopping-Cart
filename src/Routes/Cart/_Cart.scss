@@ -1,6 +1,9 @@
 @import '../Shop/Shop';
 
-.cart-wrapper {
-    @extend .shop-items-wrapper; 
+#Cart {
+    
 }
 
+.cart-wrapper {
+    @extend .shop-items-wrapper;
+}
