@@ -1,9 +1,6 @@
-@import '../ShopItem/ShopItem';
 
 $border-black : #000000;
 $Checkout-background-blue: #81d1db;
-$checkout-item-background-blue: $card-background-color; //inherited from ShopItem.scss
-
 
 
 #Checkout-fullscreen-wrapper {
@@ -47,7 +44,7 @@ $checkout-item-background-blue: $card-background-color; //inherited from ShopIte
     .checkout-title {
         position: sticky;
         top: 0px;
-        background-color: $Checkout-background-blue;
+        background-color: whitesmoke;
     }
 
     .checkout-items-wrapper {
@@ -59,7 +56,6 @@ $checkout-item-background-blue: $card-background-color; //inherited from ShopIte
             padding: 10px;
             display: flex;
             gap: 20px;
-            background-color: $checkout-item-background-blue;
             border: 2px solid $border-black;
 
             & img {

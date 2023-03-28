@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect } from "react";
 import FilledStar from '../../assets/images/filled-star.png'
 import EmptyStar from '../../assets/images/empty-star.png'
 import { searchItems } from "../../shopItems";
+import '../../assets/fonts/Roboto/Roboto-Medium.ttf'
 
 export default function ShopItem(props) {
     let targetItem = searchItems(props.name)[0]
@@ -27,7 +28,7 @@ export default function ShopItem(props) {
                 <img className="ShopItem-image" src={props.image} alt="" />
                 <figcaption>
                     <p className="ShopItem-name">{props.name}</p>
-                    <p className="ShopItem-description">{props.description}</p>
+                    {/* <p className="ShopItem-description">{props.description}</p> */}
                     <p className="price">{props.price}</p>
 
                     {props.displayAsCartItem &&
@@ -44,12 +45,19 @@ export default function ShopItem(props) {
                         </div>
                     }
 
-                    <img className="favourite-star"
-                        id={props.id}
-                        onClick={props.handleClickIsFavourite}
-                        src={props.isFavourite ? FilledStar : EmptyStar}
-                    />
-                    <button className="added-to-cart-button" id={props.id} onClick={props.handleClickAddToCart}>{props.addedToCart ? '✔ Added to Cart' : 'Add to Cart'}</button>
+                    <div className="star-and-cart-wrapper">
+                        <img className="favourite-star"
+                            id={props.id}
+                            onClick={props.handleClickIsFavourite}
+                            src={props.isFavourite ? FilledStar : EmptyStar}
+                        />
+                        <button
+                            className="added-to-cart-button"
+                            id={props.id}
+                            onClick={props.handleClickAddToCart}>
+                            {props.addedToCart ? '✔ Added to Cart' : 'Add to Cart'}
+                        </button>
+                    </div>
                 </figcaption>
             </figure>
         </React.Fragment>
