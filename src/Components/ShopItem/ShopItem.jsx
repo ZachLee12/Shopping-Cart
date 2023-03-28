@@ -26,7 +26,9 @@ export default function ShopItem(props) {
         <React.Fragment>
             <figure className="ShopItem">
                 <div className="position-wrapper">
-                    <img className="ShopItem-image" src={props.image} alt="" />
+                    <div className="image-scale-wrapper">
+                        <img className="ShopItem-image" src={props.image} alt="" />
+                    </div>
                     <div className="favourite-and-cart-wrapper">
                         <button
                             className="favourite-button feature-button"

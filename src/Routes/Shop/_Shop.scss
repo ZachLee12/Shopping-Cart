@@ -2,9 +2,6 @@ $header-height: 80px; //change this value with $header-height in _App.scss!
 $grid-row-gap: 20px;
 $shop-background-color: #ffffff;
 
-
-
-
 @mixin gridItemsCenter {
     display: grid;
     justify-items: center;

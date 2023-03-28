@@ -112,11 +112,13 @@ export default function Cart() {
             </div>
 
 
-            <button
-                onClick={handleClickMountCheckout}
-                className="checkout-button">
-                Checkout
-            </button>
+            <div className="positioning-wrapper">
+                <button
+                    onClick={handleClickMountCheckout}
+                    className="checkout-button">
+                    Checkout
+                </button>
+            </div>
 
             <Checkout
                 itemList={itemList}

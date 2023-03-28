@@ -21,15 +21,21 @@
     max-width: 300px;
     background-color: whitesmoke;
     padding-bottom: 10px;
+    box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
 
     @include flexCenter(column);
 
     .position-wrapper {
         position: relative;
 
-        .ShopItem-image {
-            height: 300px;
-            width: 100%;
+        .image-scale-wrapper {
+            overflow: hidden;
+
+            .ShopItem-image {
+                transition: transform 300ms ease-in-out;
+                height: 300px;
+                width: 100%;
+            }
         }
 
         .favourite-and-cart-wrapper {
@@ -69,7 +75,8 @@
         transform: translateY(0px);
     }
 
-    &:hover .ShopItem-image{
+    //zoom into image when hovered
+    &:hover .ShopItem-image {
         transform: scale(1.2);
     }
 
@@ -97,7 +104,7 @@
                 justify-content: flex-start;
                 gap: 5px;
 
-                .unit-number-input{
+                .unit-number-input {
                     width: 100%;
                     text-align: center;
                 }
