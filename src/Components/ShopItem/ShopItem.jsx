@@ -25,11 +25,26 @@ export default function ShopItem(props) {
     return (
         <React.Fragment>
             <figure className="ShopItem">
-                <img className="ShopItem-image" src={props.image} alt="" />
+                <div className="position-wrapper">
+                    <img className="ShopItem-image" src={props.image} alt="" />
+                    <div className="favourite-and-cart-wrapper">
+                        <button
+                            className="favourite-button feature-button"
+                            id={props.id}
+                            onClick={props.handleClickIsFavourite}
+                        >{props.isFavourite ? 'Favourited' : 'Favourite'}</button>
+                        <button
+                            className="added-to-cart-button feature-button"
+                            id={props.id}
+                            onClick={props.handleClickAddToCart}>
+                            {props.addedToCart ? '✔ Added to Cart' : 'Add to Cart'}
+                        </button>
+                    </div>
+                </div>
                 <figcaption>
                     <p className="ShopItem-name">{props.name}</p>
                     {/* <p className="ShopItem-description">{props.description}</p> */}
-                    <p className="price">{props.price}</p>
+                    <p className="price">${props.price}</p>
 
                     {props.displayAsCartItem &&
                         <div className="cart-information-wrapper">
@@ -44,20 +59,6 @@ export default function ShopItem(props) {
                             <p>Total: {shopItem.totalPrice}</p>
                         </div>
                     }
-
-                    <div className="star-and-cart-wrapper">
-                        <img className="favourite-star"
-                            id={props.id}
-                            onClick={props.handleClickIsFavourite}
-                            src={props.isFavourite ? FilledStar : EmptyStar}
-                        />
-                        <button
-                            className="added-to-cart-button"
-                            id={props.id}
-                            onClick={props.handleClickAddToCart}>
-                            {props.addedToCart ? '✔ Added to Cart' : 'Add to Cart'}
-                        </button>
-                    </div>
                 </figcaption>
             </figure>
         </React.Fragment>
