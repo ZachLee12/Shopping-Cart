@@ -74,25 +74,24 @@ export default function Shop() {
                 <Link to={'/favourites'}>Favourites</Link>
             </div>
 
-
             <div className="shop-content">
-                <h1>Shop page</h1>
-                <Form id='search-form'>
-                    <label className='search-bar-label' htmlFor="search-bar">
-                        Search
-                        <input
-                            autoComplete="off"
-                            type="search"
-                            id='search-bar'
-                            name='q'
-                            onChange={(e) => {
-                                const isFirstSearch = q == null;
-                                submit(e.currentTarget.form, {
-                                    replace: !isFirstSearch
-                                })
-                            }}
-                        />
-                    </label>
+                <p className="shop-page-title">Shop page</p>
+
+                <Form className='search-form'>
+                    <input
+                        placeholder="search..."
+                        autoComplete="off"
+                        type="search"
+                        id='search-bar'
+                        name='q'
+                        onChange={(e) => {
+                            const isFirstSearch = q == null;
+                            submit(e.currentTarget.form, {
+                                replace: !isFirstSearch
+                            })
+                        }}
+                    />
+                    <div className="horizontal-line"></div>
                 </Form>
                 <div className="shop-items-wrapper">
                     {searchedItemList.length > 0

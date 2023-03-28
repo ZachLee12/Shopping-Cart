@@ -1,8 +1,7 @@
-import './_App.scss';
+import './App.scss';
 import { Outlet, Link } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { itemList as fullItemList } from './shopItems';
-import MainPage from './Components/MainPage/MainPage';
 
 export default function App() {
   const initialMounts = {

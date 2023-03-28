@@ -1,8 +1,8 @@
-
-
 $header-height: 80px; //change this value with $header-height in _App.scss!
 $grid-row-gap: 20px;
-$shop-background-color: #e2e8f0;
+$shop-background-color: #ffffff;
+
+
 
 
 @mixin gridItemsCenter {
@@ -11,44 +11,86 @@ $shop-background-color: #e2e8f0;
     align-items: center;
 }
 
+@mixin flexDisplay($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+
+    @content
+}
+
 #Shop {
     background-color: $shop-background-color;
-    display: flex;
+    @include flexDisplay();
 }
 
 .sidebar {
-    display: flex;
-    flex-direction: column;
+    @include flexDisplay(column);
     flex-shrink: 0;
     width: 300px;
     background-color: beige;
 }
 
 .shop-content {
-    display: flex;
-    flex-direction: column;
+    @include flexDisplay(column) {
+        gap: 10px;
+    }
+
+    ;
     width: 100%;
 
     height: calc(100vh - $header-height);
     overflow-y: auto;
-}
 
-.shop-items-wrapper {
-    @include gridItemsCenter();
-    align-content: center;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
-    grid-template-rows: auto;
-    row-gap: $grid-row-gap;
-    //.ShopItem is in _ShopItem.scss 
-}
+    .shop-page-title {
+        font-size: 2em;
+        margin-bottom: 10px;
+        text-align: center;
+    }
 
-#search-form input[type='search'] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='%23999' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' /%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: 0.2rem 0.35rem;
-    padding-left: 1.5em;
-    background-size: 1rem;
-    border: none;
-    border-radius: 10px;
+    .search-form {
+        @include flexDisplay(column) {
+            // gap: 10px;
+        };
+        align-self: center;
+        width: 60%;
+
+        & input[type='search'] {
+            height: 45px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='%23999' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' /%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: 0.2rem 1.12rem;
+            padding-left: 1.5em;
+            background-size: 1.2rem;
+            border: none;
+            text-align: center;
+            background-color: transparent;
+            background-color: rgba(100, 98, 98, 0.2);
+            outline: none;
+            font-size: 2em;
+        }
+
+        .horizontal-line {
+            background-color: black;
+            width: 100%;
+            height: 5px;
+            transition: transform 400ms ease-in-out;
+            transform: scaleX(0);
+        }
+
+        &:hover .horizontal-line {
+            transform: scaleX(1)
+        }
+
+    } //search form
+    
+    .shop-items-wrapper {
+        @include gridItemsCenter();
+        align-content: center;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+        grid-template-rows: auto;
+        row-gap: $grid-row-gap;
+        //.ShopItem is in _ShopItem.scss 
+    }
+
 }
