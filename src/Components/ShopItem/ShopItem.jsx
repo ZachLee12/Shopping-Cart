@@ -48,14 +48,15 @@ export default function ShopItem(props) {
 
                     {props.displayAsCartItem &&
                         <div className="cart-information-wrapper">
-                            <p>Units: {shopItem.units} </p>
-                            <input
-                                min={1}
-                                max={100}
-                                type="number"
-                                onChange={handleChangeUnits}
-                                defaultValue={shopItem.units}
-                            />
+                            <p className="units-wrapper">Units:
+                                <input
+                                    className="unit-number-input"
+                                    min={1}
+                                    max={100}
+                                    type="number"
+                                    onChange={handleChangeUnits}
+                                    defaultValue={shopItem.units}
+                                /></p>
                             <p>Total: {shopItem.totalPrice}</p>
                         </div>
                     }
