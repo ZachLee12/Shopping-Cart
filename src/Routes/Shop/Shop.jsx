@@ -75,7 +75,7 @@ export default function Shop() {
             </div>
 
             <div className="shop-content">
-                <p className="shop-page-title">Shop page</p>
+                <p className="shop-page-title">Find your style.</p>
 
                 <Form className='search-form'>
                     <input

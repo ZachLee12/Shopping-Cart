@@ -39,15 +39,18 @@ $shop-background-color: #ffffff;
     overflow-y: auto;
 
     .shop-page-title {
+        font-family: Georgia, 'Times New Roman', Times, serif;
         font-size: 2em;
-        margin-bottom: 10px;
+        margin: 10px 0;
         text-align: center;
     }
 
     .search-form {
         @include flexDisplay(column) {
             // gap: 10px;
-        };
+        }
+
+        ;
         align-self: center;
         width: 60%;
 
@@ -74,12 +77,14 @@ $shop-background-color: #ffffff;
             transform: scaleX(0);
         }
 
-        &:hover .horizontal-line {
+        &:focus-within .horizontal-line {
             transform: scaleX(1)
         }
 
-    } //search form
-    
+    }
+
+    //search form
+
     .shop-items-wrapper {
         @include gridItemsCenter();
         align-content: center;
