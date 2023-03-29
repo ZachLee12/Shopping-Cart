@@ -71,7 +71,22 @@ export default function Shop(props) {
     return (
         <div id='Shop'>
             <div className='sidebar'>
-                <Link to={'/favourites'}>Favourites</Link>
+                <div className="link-wrapper">
+                    <Link to={'/favourites'} className='sidebar-link'><span>Favourites</span></Link>
+                    <div className="sidebar-link-horizontal-line"></div>
+                </div>
+                <div className="link-wrapper">
+                    <Link className='sidebar-link'><span>Placeholder 1</span></Link>
+                    <div className="sidebar-link-horizontal-line"></div>
+                </div>
+                <div className="link-wrapper">
+                    <Link className='sidebar-link'><span>Placeholder 2</span></Link>
+                    <div className="sidebar-link-horizontal-line"></div>
+                </div>
+                <div className="link-wrapper">
+                    <Link className='sidebar-link'><span>Placeholder 3</span></Link>
+                    <div className="sidebar-link-horizontal-line"></div>
+                </div>
             </div>
 
             <div className="shop-content">
