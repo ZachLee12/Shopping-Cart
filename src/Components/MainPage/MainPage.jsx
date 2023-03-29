@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import PlaceholderImage from '../../assets/images/placeholderImage.jpg'
 
+
 export default function MainPage() {
+
     return (
         <React.Fragment>
             <div id='MainPage'>

@@ -4,33 +4,112 @@ import React, { useEffect } from 'react';
 import { itemList as fullItemList } from './shopItems';
 
 export default function App() {
-  const initialMounts = {
-    sidebar: false,
-    cartButton: false,
-    mainPage: true
+
+  const initialState = {
+    activeRoute: {
+      mainPage: true,
+      shop: false,
+      contact: false,
+      about: false
+    },
+    mount: {
+      sidebar: false,
+      cartButton: false,
+      mainPage: true
+    }
   }
 
-  const [mount, setMount] = React.useState(initialMounts);
+  const [state, setState] = React.useState(initialState);
+
+  const handleClickMain = (e) => {
+    mountMainPageComponents();
+    setMainPageRouteActive();
+  }
+
+  const handleClickShop = (e) => {
+    unmountMainPageComponents();
+    setShopRouteActive();
+  }
+
+  const handleClickContact = (e) => {
+    unmountMainPageComponents();
+    setContactRouteActive();
+  }
+
+  const handleClickAbout = (e) => {
+    unmountMainPageComponents();
+    setAboutRouteActive();
+  }
+
+  const setMainPageRouteActive = () => {
+    setState({
+      ...state,
+      activeRoute: {
+        mainPage: true,
+        shop: false,
+        contact: false,
+        about: false
+      }
+    })
+  }
+
+  const setShopRouteActive = () => {
+    setState({
+      ...state,
+      activeRoute: {
+        mainPage: false,
+        shop: true,
+        contact: false,
+        about: false
+      }
+    })
+  }
+
+  const setContactRouteActive = () => {
+    setState({
+      ...state,
+      activeRoute: {
+        mainPage: false,
+        shop: false,
+        contact: true,
+        about: false
+      }
+    })
+  }
+
+  const setAboutRouteActive = () => {
+    setState({
+      ...state,
+      activeRoute: {
+        mainPage: false,
+        shop: false,
+        contact: false,
+        about: true
+      }
+    })
+  }
 
   const mountMainPageComponents = (e) => {
-    setMount({
-      ...mount,
-      mainPage: true,
-      sidebar: false,
+    setState({
+      ...state,
+      mount: {
+        ...state.mount,
+        sidebar: false,
+        mainPage: true
+      }
     })
   }
 
   const unmountMainPageComponents = (e) => {
-    setMount({
-      ...mount,
-      mainPage: false,
-      sidebar: true,
+    setState({
+      ...state,
+      mount: {
+        ...state.mount,
+        sidebar: true,
+        mainPage: false
+      }
     })
   }
-
-  useEffect(() => {
-
-  }, [mount.mainPage])
 
   return (
     <div id="App">
@@ -38,18 +117,28 @@ export default function App() {
         <header className='header'>
           <div>Root</div>
           <div className='nagivation-tabs-wrapper'>
-            <Link onClick={mountMainPageComponents}
+            <Link onClick={handleClickMain}
               to={'/'}
-              className='navigation-tab'>
+              className={`navigation-tab ${state.activeRoute.mainPage ? 'active-tab-color' : ''}`}>
               Main
             </Link>
-            <Link onClick={unmountMainPageComponents} to={'/shop'} className='navigation-tab'>
+
+            <Link
+              onClick={handleClickShop}
+              to={'/shop'}
+              className={`navigation-tab ${state.activeRoute.shop ? 'active-tab-color' : ''}`}>
               Shop
             </Link>
-            <Link onClick={unmountMainPageComponents} to={'/contact'} className='navigation-tab'>
+            <Link
+              onClick={handleClickContact}
+              to={'/contact'}
+              className={`navigation-tab ${state.activeRoute.contact ? 'active-tab-color' : ''}`}>
               Contact
             </Link>
-            <Link onClick={unmountMainPageComponents} to={'/about'} className='navigation-tab'>
+            <Link
+              onClick={handleClickAbout}
+              to={'/about'}
+              className={`navigation-tab ${state.activeRoute.about ? 'active-tab-color' : ''}`}>
               About
             </Link>
           </div>
@@ -58,7 +147,7 @@ export default function App() {
 
         <section className="main-content-wrapper">
 
-          {/* <MainPage shouldMount={mount.mainPage} /> */}
+          {/* <MainPage shouldstate={state.mainPage} /> */}
 
           <Link to={'/cart'} className='link-to-cart'>
             <div className="number-of-cart-items">

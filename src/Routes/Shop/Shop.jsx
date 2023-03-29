@@ -7,7 +7,7 @@ import {
 
 import { Link } from "react-router-dom";
 
-import { Form, useLoaderData, useNavigate, useSubmit } from 'react-router-dom'
+import { Form, useLoaderData, useSubmit } from 'react-router-dom'
 
 export function loader({ request }) {
     const url = new URL(request.url)
@@ -20,7 +20,7 @@ export function loader({ request }) {
     return { searchedItemList: searchItems(q), q }
 }
 
-export default function Shop() {
+export default function Shop(props) {
     const submit = useSubmit();
     //note that due to SHALLOW COPYING with filter(),
     //all itemLists here are IN SYNC with their states

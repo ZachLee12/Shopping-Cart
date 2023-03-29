@@ -104,6 +104,11 @@ body {
                 color: $text-color-hover;
             }
         }
+
+        //for when tab is active
+        .active-tab-color {
+            color: $text-color-hover;
+        }
     }
 }
 
