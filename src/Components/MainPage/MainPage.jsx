@@ -1,9 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import PlaceholderImage from '../../assets/images/placeholderImage.jpg'
 import OtherPlaceholderImage from '../../assets/images/clothes6.jpg'
 
 export default function MainPage() {
+
+    const initialState = {
+        
+    }
+
+    const [state, setState] = useState();
+
+
 
     return (
         <React.Fragment>
