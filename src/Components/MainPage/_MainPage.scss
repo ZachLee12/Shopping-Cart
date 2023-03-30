@@ -70,10 +70,12 @@ $shop-title-font-size: 3em;
         margin: auto;
         font-size: $shop-title-font-size;
         color: wheat;
+        user-select: none;
     }
 
     p.shop-description {
         color: white;
+        user-select: none;
     }
 
     .vertical-line {
