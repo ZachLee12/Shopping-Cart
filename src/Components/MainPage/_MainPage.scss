@@ -82,16 +82,23 @@ $shop-title-font-size: 3em;
         position: relative;
         @include flexCenter(row);
 
+
+        //hover: VERTICAL LINE
         &:hover .vertical-line {
             width: 300px;
-            transition: width 400ms ease-in-out;
+            background-color: rgba(178, 175, 175, 0.5);
+            transition: width 400ms ease-in-out,
+                background-color 400ms ease-in-out;
         }
 
         &:not(:hover) .vertical-line {
             width: 10px;
-            transition: width 400ms ease-in-out 400ms;
+            background-color: white;
+            transition: width 400ms ease-in-out 400ms,
+            background-color 400ms ease-in-out 800ms;
         }
 
+        //hover: HIDDEN-CONTENTS
         &:hover .vertical-line .hidden-contents {
             transition: opacity 400ms ease-in-out 400ms;
             opacity: 1;
@@ -102,16 +109,28 @@ $shop-title-font-size: 3em;
             opacity: 0;
         }
 
+        //hover: SHOP-IMAGE
+        &:hover .shop-image{
+            transition: opacity 400ms ease-in-out;
+            opacity: 0;
+        }
+
+        &:not(:hover) .shop-image{
+            transition: opacity 400ms ease-in-out 1050ms;
+            opacity: 1;
+        }
+
         .vertical-line {
             position: absolute;
             left: -30px;
-            background-color: white;
             height: 300px;
             overflow: hidden;
 
             .hidden-contents {
                 width: 100%;
+                height: 100%;
                 opacity: 0;
+
             }
         }
 
