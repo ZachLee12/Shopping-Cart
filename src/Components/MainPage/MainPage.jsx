@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import PlaceholderImage from '../../assets/images/placeholderImage.jpg'
-
+import OtherPlaceholderImage from '../../assets/images/clothes6.jpg'
 
 export default function MainPage() {
 
@@ -12,9 +12,14 @@ export default function MainPage() {
                     <p className='shop-title'>Main Shop</p>
                     <p className='shop-description'>Some other description about this main shop</p>
                 </div>
-                <div className="vertical-line"></div>
-
-                <img src={PlaceholderImage} className='shop-image' />
+                <div className="vertical-line-and-shop-image-wrapper">
+                    <div className="vertical-line">
+                        <div className='hidden-contents'>
+                            <img src={OtherPlaceholderImage} alt="" />
+                        </div>
+                    </div>
+                    <img src={PlaceholderImage} className='shop-image' />
+                </div>
 
             </div>
         </React.Fragment>

@@ -58,7 +58,7 @@ $shop-title-font-size: 3em;
 
 #MainPage {
     @include flexCenter(row) {
-        gap: 20px;
+        gap: 50px;
     }
 
     ;
@@ -78,16 +78,53 @@ $shop-title-font-size: 3em;
         user-select: none;
     }
 
-    .vertical-line {
-        background-color: white;
-        width: 10px;
-        height: 300px;
+    .vertical-line-and-shop-image-wrapper {
+        position: relative;
+        @include flexCenter(row);
+
+        &:hover .vertical-line {
+            width: 300px;
+            transition: width 400ms ease-in-out;
+        }
+
+        &:not(:hover) .vertical-line {
+            width: 10px;
+            transition: width 400ms ease-in-out 400ms;
+        }
+
+        &:hover .vertical-line .hidden-contents {
+            transition: opacity 400ms ease-in-out 400ms;
+            opacity: 1;
+        }
+
+        &:not(:hover) .vertical-line .hidden-contents {
+            transition: opacity 400ms ease-in-out;
+            opacity: 0;
+        }
+
+        .vertical-line {
+            position: absolute;
+            left: -30px;
+            background-color: white;
+            height: 300px;
+            overflow: hidden;
+
+            .hidden-contents {
+                width: 100%;
+                opacity: 0;
+            }
+        }
+
+        .shop-image {
+            @include liquid-effect();
+            width: 250px;
+            height: 250px;
+        }
     }
 
-    .shop-image {
-        @include liquid-effect();
-        width: 250px;
-        height: 250px;
+
+    .shop-image:hover .shop-introduction-container+.vertical-line {
+        width: 400px;
     }
 
 }
