@@ -82,7 +82,6 @@ $shop-title-font-size: 3em;
         position: relative;
         @include flexCenter(row);
 
-
         //hover: VERTICAL LINE
         &:hover .vertical-line {
             width: 300px;
@@ -106,7 +105,7 @@ $shop-title-font-size: 3em;
 
         &:not(:hover) .vertical-line .hidden-contents {
             transition: opacity 400ms ease-in-out;
-            opacity: 0;
+            opacity: 0; 
         }
 
         //hover: SHOP-IMAGE
@@ -136,11 +135,41 @@ $shop-title-font-size: 3em;
                     height: 200px;
                     width: 100%;
                     transition: all 400ms ease-in-out;
+                    box-shadow: 1px 2px 5px black;
+
                 }
 
                 .index-buttons-wrapper {
+                    @include flexCenter(row) {
+                        justify-content: space-evenly
+                    }
+
+                    ;
+                    width: 100%;
                     position: absolute;
                     bottom: 0px;
+                    left: 0px;
+                    height: 27%;
+
+                    //previous and next btns
+                    button {
+                        font-size: 0.95em;
+                        font-family: Georgia, 'Times New Roman', Times, serif;
+                        width: 100px;
+                        height: 35px;
+                        background-color: white;
+                        color: black;
+                        transition: background-color 400ms ease-in-out;
+                        border: 2px solid black;
+
+                        &:hover {
+                            background-color: black;
+                            color: white;
+                            border-color: white;
+                        }
+
+
+                    }
 
                 }
 
