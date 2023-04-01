@@ -34,12 +34,12 @@ export default function ShopItem(props) {
                             className="favourite-button feature-button"
                             id={props.id}
                             onClick={props.handleClickIsFavourite}
-                        >{props.isFavourite ? 'Favourited' : 'Favourite'}</button>
+                        >{props.isFavourite ? '✨Favourited' : 'Favourite'}</button>
                         <button
                             className="added-to-cart-button feature-button"
                             id={props.id}
                             onClick={props.handleClickAddToCart}>
-                            {props.addedToCart ? '✔ Added to Cart' : 'Add to Cart'}
+                            {props.addedToCart ? '🛍️Added to Cart' : 'Add to Cart'}
                         </button>
                     </div>
                 </div>
