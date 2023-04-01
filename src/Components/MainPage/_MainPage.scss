@@ -105,7 +105,7 @@ $shop-title-font-size: 3em;
 
         &:not(:hover) .vertical-line .hidden-contents {
             transition: opacity 400ms ease-in-out;
-            opacity: 0; 
+            opacity: 0;
         }
 
         //hover: SHOP-IMAGE
@@ -146,7 +146,7 @@ $shop-title-font-size: 3em;
                     }
 
                     ;
-
+                    margin-top: 5px;
                     $bullet-dimension : 8px;
 
                     .index-bullet {

@@ -4,9 +4,9 @@ import {
     itemList as fullItemList,
     searchItems
 } from "../../shopItems";
+import uniqid from 'uniqid';
 
 import { Link } from "react-router-dom";
-
 import { Form, useLoaderData, useSubmit } from 'react-router-dom'
 
 export function loader({ request }) {
@@ -28,9 +28,30 @@ export default function Shop(props) {
     const { searchedItemList, q } = useLoaderData();
 
     const initialState = {
-        itemList: fullItemList
+        itemList: fullItemList,
+        links: {
+            favourites: {
+                name: 'Favourites',
+                id: uniqid(),
+                isActive: false
+            },
+            placeholder1: {
+                name: 'Placeholder 1',
+                id: uniqid(),
+                isActive: false
+            },
+            placeholder2: {
+                name: 'Placeholder 2',
+                id: uniqid(),
+                isActive: false
+            },
+            placeholder3: {
+                name: 'Placeholder 3',
+                id: uniqid(),
+                isActive: false
+            }
+        }
     }
-
     const [shop, setShop] = React.useState(initialState)
 
     const handleClickIsFavourite = (e) => {
@@ -68,23 +89,55 @@ export default function Shop(props) {
         })
     }
 
+    const setActiveTab = (e) => {
+
+
+    }
+
     return (
         <div id='Shop'>
             <div className='sidebar'>
                 <div className="link-wrapper">
-                    <Link to={'/favourites'} className='sidebar-link'><span>Favourites</span></Link>
+                    <Link
+                        to={'/favourites'}
+                        className='sidebar-link'>
+                        <span
+                            onClick={setActiveTab}
+                            id={shop.links.favourites.id}
+                        >{shop.links.favourites.name}</span>
+                    </Link>
                     <div className="sidebar-link-horizontal-line"></div>
                 </div>
                 <div className="link-wrapper">
-                    <Link className='sidebar-link'><span>Placeholder 1</span></Link>
+                    <Link
+                        className='sidebar-link'>
+                        <span
+                            onClick={setActiveTab}
+                            id={shop.links.placeholder1.id}
+                        >{shop.links.placeholder1.name}</span>
+                    </Link>
+                    <div className={`sidebar-link-horizontal-line ${shop.links.placeholder1.isActive ? 'active-sidebar-horizontal-line' : ''}`}></div>
+                </div>
+                <div className="link-wrapper">
+                    <Link
+                        id={shop.links.placeholder2.id}
+                        className='sidebar-link'>
+                        <span
+                            onClick={setActiveTab}
+                            id={shop.links.placeholder2.id}
+                        >{shop.links.placeholder2.name}</span>
+                    </Link>
                     <div className="sidebar-link-horizontal-line"></div>
                 </div>
                 <div className="link-wrapper">
-                    <Link className='sidebar-link'><span>Placeholder 2</span></Link>
-                    <div className="sidebar-link-horizontal-line"></div>
-                </div>
-                <div className="link-wrapper">
-                    <Link className='sidebar-link'><span>Placeholder 3</span></Link>
+                    <Link
+                        id={shop.links.placeholder3.id}
+                        className='sidebar-link'>
+                        <span
+                            onClick={setActiveTab}
+                            id={shop.links.placeholder3.id}
+                        >{shop.links.placeholder3.name}</span>
+                    </Link>
                     <div className="sidebar-link-horizontal-line"></div>
                 </div>
             </div>

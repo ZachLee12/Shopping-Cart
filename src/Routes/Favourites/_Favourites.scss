@@ -1,6 +1,69 @@
-@import '../Shop/Shop';
+@import '../Shop/_Shop';
+
+@mixin flexDisplay($direction: row, $center-contents: false) {
+    display: flex;
+    flex-direction: $direction;
+
+    @if($center-contents) {
+        justify-content: center;
+        align-items: center;
+    }
+
+    @content;
+}
+
+#Favourites {
+    position: relative;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.go-back-btn-wrapper {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: white;
+    font-size: 0.8em;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: background-color 400ms ease-in-out;
+    border: 2px solid black;
+    height: 30px;
+
+    &:hover {
+        background-color: #d6d6d6;
+    }
+
+    @include flexDisplay(row, true) {
+        gap: 10px;
+    }
+
+    ;
+
+    img {
+        width: 15px;
+    }
+}
+
+.favourites-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    margin: 10px 0;
+    text-align: center;
+    text-decoration: underline;
+}
 
 .favourites-wrapper {
+    height: 100%;
     //for grid layout
-    @extend .shop-items-wrapper;
+    @include gridItemsCenter(); //from _Shop.scss
+    // align-content: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+    grid-template-rows: auto;
+    row-gap: $grid-row-gap;
+    overflow-y: auto;
+
 }

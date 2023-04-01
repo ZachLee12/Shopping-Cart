@@ -1,8 +1,14 @@
 import { itemList as fullItemList } from "../../shopItems";
 import ShopItem from "../../Components/ShopItem/ShopItem";
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import ArrowLeft from '../../assets/images/arrow-left.png'
 
 export default function Favourites() {
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate(-1)
+    }
     const searchFavourites = (() => {
         return fullItemList.filter(item => item.isFavourite)
     })();
@@ -45,20 +51,13 @@ export default function Favourites() {
         })
     }
 
-    useEffect(() => {
-        // console.log('COMPONENT MOUNTED')
-        // console.log(favourite)
-
-        return () => {
-            // console.log('COMPONENT UNMOUNTED')
-            // console.log(favourite)
-        }
-
-    }, [])
-
     return (
         <div id="Favourites">
-            <h1>Favourite</h1>
+            <button onClick={goBack} className="go-back-btn-wrapper">
+                <img src={ArrowLeft} alt="" />
+                <p className="back-to-shop-title">Back To Shop</p>
+            </button>
+            <p className="favourites-title">Favourites</p>
             <div className="favourites-wrapper">
                 {searchFavourites.map(item => {
                     return (
