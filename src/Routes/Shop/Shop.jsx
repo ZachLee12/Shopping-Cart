@@ -6,6 +6,7 @@ import {
 } from "../../shopItems";
 import uniqid from 'uniqid';
 
+import MenuIcon from '../../assets/images/menu.png'
 import { Link } from "react-router-dom";
 import { Form, useLoaderData, useSubmit } from 'react-router-dom'
 
@@ -28,6 +29,7 @@ export default function Shop(props) {
     const { searchedItemList, q } = useLoaderData();
 
     const initialState = {
+        showSideBar: true,
         itemList: fullItemList,
         links: {
             favourites: {
@@ -89,57 +91,64 @@ export default function Shop(props) {
         })
     }
 
-    const setActiveTab = (e) => {
-
-
+    const toggleSideBar = (e) => {
+        setShop({
+            ...shop,
+            showSideBar: !shop.showSideBar
+        })
     }
 
     return (
         <div id='Shop'>
-            <div className='sidebar'>
-                <div className="link-wrapper">
-                    <Link
-                        to={'/favourites'}
-                        className='sidebar-link'>
-                        <span
-                            onClick={setActiveTab}
-                            id={shop.links.favourites.id}
-                        >{shop.links.favourites.name}</span>
-                    </Link>
-                    <div className="sidebar-link-horizontal-line"></div>
-                </div>
-                <div className="link-wrapper">
-                    <Link
-                        className='sidebar-link'>
-                        <span
-                            onClick={setActiveTab}
-                            id={shop.links.placeholder1.id}
-                        >{shop.links.placeholder1.name}</span>
-                    </Link>
-                    <div className={`sidebar-link-horizontal-line ${shop.links.placeholder1.isActive ? 'active-sidebar-horizontal-line' : ''}`}></div>
-                </div>
-                <div className="link-wrapper">
-                    <Link
-                        id={shop.links.placeholder2.id}
-                        className='sidebar-link'>
-                        <span
-                            onClick={setActiveTab}
+            <div className="sidebar-wrapper">
+                <div className={`sidebar ${shop.showSideBar ? 'show-sidebar' : ''}`}>
+                    <div className="link-wrapper">
+                        <Link
+                            to={'/favourites'}
+                            className='sidebar-link'>
+                            <span
+                                id={shop.links.favourites.id}
+                            >{shop.links.favourites.name}</span>
+                        </Link>
+                        <div className="sidebar-link-horizontal-line"></div>
+                    </div>
+                    <div className="link-wrapper">
+                        <Link
+                            className='sidebar-link'>
+                            <span
+                                id={shop.links.placeholder1.id}
+                            >{shop.links.placeholder1.name}</span>
+                        </Link>
+                        <div className={`sidebar-link-horizontal-line ${shop.links.placeholder1.isActive ? 'active-sidebar-horizontal-line' : ''}`}></div>
+                    </div>
+                    <div className="link-wrapper">
+                        <Link
                             id={shop.links.placeholder2.id}
-                        >{shop.links.placeholder2.name}</span>
-                    </Link>
-                    <div className="sidebar-link-horizontal-line"></div>
-                </div>
-                <div className="link-wrapper">
-                    <Link
-                        id={shop.links.placeholder3.id}
-                        className='sidebar-link'>
-                        <span
-                            onClick={setActiveTab}
+                            className='sidebar-link'>
+                            <span
+                                id={shop.links.placeholder2.id}
+                            >{shop.links.placeholder2.name}</span>
+                        </Link>
+                        <div className="sidebar-link-horizontal-line"></div>
+                    </div>
+                    <div className="link-wrapper">
+                        <Link
                             id={shop.links.placeholder3.id}
-                        >{shop.links.placeholder3.name}</span>
-                    </Link>
-                    <div className="sidebar-link-horizontal-line"></div>
+                            className='sidebar-link'>
+                            <span
+                                id={shop.links.placeholder3.id}
+                            >{shop.links.placeholder3.name}</span>
+                        </Link>
+                        <div className="sidebar-link-horizontal-line"></div>
+                    </div>
                 </div>
+            </div>
+            <div
+                onClick={toggleSideBar}
+                className="menu-btn"
+                alt="menu-icon"
+            >
+                &#60;
             </div>
 
             <div className="shop-content">

@@ -212,3 +212,19 @@ $shop-title-font-size: 3em;
     }
 
 }
+
+@media only screen and (max-width:650px) {
+    #MainPage {
+        @include flexCenter(column);
+    }
+
+    .shop-introduction-container {
+        .shop-title {
+            text-align: center;
+        }
+    }
+
+    .vertical-line {
+        opacity: 0;
+    }
+}

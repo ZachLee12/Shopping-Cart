@@ -80,13 +80,19 @@ body {
 .header {
     @include flexCenter(row) {
         //overwrites justify-content:center
-        justify-content: space-between
+        justify-content: space-between;
     }
 
     height: $header-height;
     padding: 0 20px;
     background-color: $header-background;
     color: white;
+
+    .shop-name {
+        font-weight: bolder;
+        font-size: 1.2em;
+        font-family: 'Times New Roman', Times, serif;
+    }
 
     .nagivation-tabs-wrapper {
 

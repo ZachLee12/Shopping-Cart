@@ -145,5 +145,35 @@ $shop-background-color: #ffffff;
         row-gap: $grid-row-gap;
         //.ShopItem is in _ShopItem.scss 
     }
+}
 
+@media only screen and (max-width: 650px) {
+    div.menu-btn {
+        position: absolute;
+        right: 0px;
+        width: 30px;
+        background-color: rgb(237, 77, 77);
+    }
+
+    .sidebar {
+        width: 0px;
+        z-index: 1;
+        position: absolute;
+        height: 100%;
+        overflow: hidden;
+        padding: 0px;
+        border-width: 0px;
+        transition: all 400ms ease-in-out;
+        font-size: 0.85em;
+
+        .link-wrapper {
+            white-space: nowrap; //disable text-wrap
+        }
+    }
+
+    .show-sidebar {
+        width: 200px;
+        padding: 15px;
+        border-width: 5px;
+    }
 }
