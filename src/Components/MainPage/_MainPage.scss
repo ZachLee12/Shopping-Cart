@@ -139,6 +139,28 @@ $shop-title-font-size: 3em;
 
                 }
 
+                .index-bullets-wrapper {
+
+                    @include flexCenter(row) {
+                        gap: 30px;
+                    }
+
+                    ;
+
+                    $bullet-dimension : 8px;
+
+                    .index-bullet {
+                        background-color: #b9b9b9;
+                        height: $bullet-dimension;
+                        width: $bullet-dimension;
+                        border-radius: 100%;
+                    }
+
+                    .active-bullet {
+                        background-color: #424242;
+                    }
+                }
+
                 .index-buttons-wrapper {
                     @include flexCenter(row) {
                         justify-content: space-evenly
@@ -153,6 +175,7 @@ $shop-title-font-size: 3em;
 
                     //previous and next btns
                     button {
+                        z-index: 1; //bring it to the front, because it had some overlapping with shop-image
                         font-size: 0.95em;
                         font-family: Georgia, 'Times New Roman', Times, serif;
                         width: 100px;

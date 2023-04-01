@@ -3,9 +3,16 @@ import { useLocation } from 'react-router-dom'
 import PlaceholderImage from '../../assets/images/placeholderImage.jpg'
 import OtherPlaceholderImage from '../../assets/images/clothes6.jpg'
 import Image3 from '../../assets/images/clothes1.jpg'
+import Image4 from '../../assets/images/clothes2.webp'
+import Image5 from '../../assets/images/clothes3.webp'
 
 export default function MainPage() {
-    const carouselImageList = [OtherPlaceholderImage, PlaceholderImage, Image3]
+    const carouselImageList =
+        [OtherPlaceholderImage,
+            PlaceholderImage,
+            Image3,
+            Image4,
+            Image5]
 
     const initialState = {
         currentImageIndex: 0,
@@ -63,11 +70,18 @@ export default function MainPage() {
                     <div
                         className="vertical-line">
                         <div className='hidden-contents'>
-                            <div className="carousel-images-container">
-                                <img
-                                    className='carousel-image'
-                                    src={state.currentCarouselImage} alt="" />
+                            <img
+                                className='carousel-image'
+                                src={state.currentCarouselImage} alt="" />
+
+                            <div className="index-bullets-wrapper">
+                                <div className={`index-bullet ${state.currentImageIndex === 0 ? 'active-bullet' : ''}`}></div>
+                                <div className={`index-bullet ${state.currentImageIndex === 1 ? 'active-bullet' : ''}`}></div>
+                                <div className={`index-bullet ${state.currentImageIndex === 2 ? 'active-bullet' : ''}`}></div>
+                                <div className={`index-bullet ${state.currentImageIndex === 3 ? 'active-bullet' : ''}`}></div>
+                                <div className={`index-bullet ${state.currentImageIndex === 4 ? 'active-bullet' : ''}`}></div>
                             </div>
+
                             <div className="index-buttons-wrapper">
                                 <button
                                     className='previous-btn'
