@@ -53,6 +53,7 @@ html,
 body {
     margin: 0px;
     height: 100%;
+    min-width: 380px;
 }
 
 
@@ -149,17 +150,13 @@ body {
         height: 200px;
         @include size-type-of-background(cover, './assets/images/placeholderImage.jpg');
     }
-
 }
 
 .main-content-wrapper {
     display: flex;
-    max-height: 100%;
-    // border: 2px solid greenyellow;
     height: calc(100vh - $header-height);
 
     .link-to-cart {
-        //!important exception
         position: absolute !important;
         z-index: 1;
         right: 30px;

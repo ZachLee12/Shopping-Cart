@@ -116,7 +116,6 @@ export default function App() {
   useEffect(() => {
     const initialRoute = window.location.hash
     if (initialRoute.includes('shop')) {
-      console.log('helo')
       setState({
         ...state,
         activeRoute: {
@@ -185,9 +184,6 @@ export default function App() {
 
 
         <section className="main-content-wrapper">
-
-          {/* <MainPage shouldstate={state.mainPage} /> */}
-
           <Link to={'/cart'} className='link-to-cart'>
             <div className="number-of-cart-items">
               {fullItemList.filter(item => item.addedToCart).length}
@@ -198,8 +194,6 @@ export default function App() {
           </div>
 
         </section>
-
-
       </div>
     </div>
   )

@@ -109,7 +109,7 @@ $shop-background-color: #ffffff;
 
         ;
         align-self: center;
-        width: 60%;
+        width: max(280px, 60%);
 
         & input[type='search'] {
             height: 45px;
