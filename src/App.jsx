@@ -111,6 +111,45 @@ export default function App() {
     })
   }
 
+  //to save the route indicator on browser refresh
+  //surely there is a better way than this, but this is OK for now.
+  useEffect(() => {
+    const initialRoute = window.location.hash
+    if (initialRoute.includes('shop')) {
+      console.log('helo')
+      setState({
+        ...state,
+        activeRoute: {
+          mainPage: false,
+          shop: true,
+          contact: false,
+          about: false
+        }
+      })
+    } else if (initialRoute.includes('contact')) {
+      setState({
+        ...state,
+        activeRoute: {
+          mainPage: false,
+          shop: false,
+          contact: true,
+          about: false
+        }
+      })
+
+    } else if (initialRoute.includes('about')) {
+      setState({
+        ...state,
+        activeRoute: {
+          mainPage: false,
+          shop: false,
+          contact: false,
+          about: true
+        }
+      })
+    }
+  }, [])
+
   return (
     <div id="App">
       <div className="opacity-film-wrapper">

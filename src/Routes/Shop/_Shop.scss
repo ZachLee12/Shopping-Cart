@@ -20,6 +20,15 @@ $shop-background-color: #ffffff;
     @include flexDisplay();
 }
 
+.sidebar-wrapper {
+    @include flexDisplay(row);
+    height: calc(100vh - 80px); //minus header height
+
+    .menu-panel {
+        display: none;
+    }
+}
+
 .sidebar {
     @include flexDisplay(column) {
         align-items: center;
@@ -71,6 +80,7 @@ $shop-background-color: #ffffff;
         &:hover .sidebar-link-horizontal-line {
             width: 100%;
         }
+
     }
 }
 
@@ -148,32 +158,71 @@ $shop-background-color: #ffffff;
 }
 
 @media only screen and (max-width: 650px) {
-    div.menu-btn {
-        position: absolute;
-        right: 0px;
-        width: 30px;
-        background-color: rgb(237, 77, 77);
-    }
-
-    .sidebar {
-        width: 0px;
-        z-index: 1;
-        position: absolute;
-        height: 100%;
-        overflow: hidden;
-        padding: 0px;
-        border-width: 0px;
-        transition: all 400ms ease-in-out;
-        font-size: 0.85em;
-
-        .link-wrapper {
-            white-space: nowrap; //disable text-wrap
+    div.menu-panel {
+        @include flexDisplay(column) {
+            align-items: center;
+            justify-content: center;
         }
+
+        ;
+        z-index: 1;
+        right: 0px;
+        width: 25px;
+        height:100px;
+        background-color: #5c5c5c;
+        padding: 3px; //needed to ensure text-wrapping
+
+
+        .show-menu-wrapper {
+            @include flexDisplay(column) {
+                gap: 20px;
+            }
+
+            ;
+            width: 100%;
+
+            p {
+                overflow-wrap: break-word;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: 1.2em;
+                font-weight: bolder;
+                color: white;
+                text-align: center;
+            }
+        }
+
     }
 
-    .show-sidebar {
-        width: 200px;
-        padding: 15px;
-        border-width: 5px;
+    .sidebar-wrapper {
+        @include flexDisplay(row) {}
+
+        position: absolute;
+
+        .menu-panel {
+            display: block;
+        }
+
+        .sidebar {
+            width: 0px;
+            z-index: 1;
+            height: 100%;
+            overflow: hidden;
+            padding: 0px;
+            border-width: 0px;
+            transition: all 400ms ease-in-out;
+            font-size: 0.85em;
+
+            .link-wrapper {
+                white-space: nowrap; //disable text-wrap
+            }
+        }
+
+        .show-sidebar {
+            width: 200px;
+            padding: 15px;
+            border-width: 5px;
+        }
+
     }
+
 }

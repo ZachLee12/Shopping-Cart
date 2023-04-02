@@ -29,7 +29,7 @@ export default function Shop(props) {
     const { searchedItemList, q } = useLoaderData();
 
     const initialState = {
-        showSideBar: true,
+        showSideBar: false,
         itemList: fullItemList,
         links: {
             favourites: {
@@ -142,13 +142,15 @@ export default function Shop(props) {
                         <div className="sidebar-link-horizontal-line"></div>
                     </div>
                 </div>
-            </div>
-            <div
-                onClick={toggleSideBar}
-                className="menu-btn"
-                alt="menu-icon"
-            >
-                &#60;
+                <div
+                    onClick={toggleSideBar}
+                    className="menu-panel"
+                    alt="menu-icon"
+                >
+                    <div className="show-menu-wrapper">
+                        <p>{shop.showSideBar ? 'Hide' : 'Menu'}</p>
+                    </div>
+                </div>
             </div>
 
             <div className="shop-content">
