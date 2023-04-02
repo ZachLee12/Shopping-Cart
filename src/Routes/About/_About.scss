@@ -1,1 +1,56 @@
-#About {}
+@mixin flexCenter($direction: row, $center-contents: false) {
+    display: flex;
+    flex-direction: $direction;
+
+    @if($center-contents) {
+        justify-content: center;
+        align-items: center;
+    }
+
+    @content
+}
+
+#About {
+    background-color: white;
+    height: 100%;
+    @include flexCenter(row, true)
+}
+
+.about-us-content-wrapper {
+    @include flexCenter(column, true) {
+        gap: 10px;
+    }
+
+    ;
+    width: clamp(300px, 65%, 75%);
+    background-color: rgba(172, 170, 170, 0.175);
+    padding: 20px;
+    border-radius: 15px;
+    height: 400px;
+    box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2),
+    0 1px 2px hsla(0, 0%, 0%, 0.2);
+
+    .about-us-title {
+        font-size: 2em;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .about-us-content {
+        position: relative;
+
+        .about-us-float-container {
+            float: left;
+            border: 2px solid red;
+            width: 200px;
+            height: 110px;
+            margin: 0px 16px 10px 0px;
+        }
+
+        .about-us-image {
+            position: absolute;
+            top: -60px;
+            left: -100px;
+            width: 300px;
+        }
+    }
+}

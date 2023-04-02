@@ -9,7 +9,6 @@ export default function Contact() {
                     Dolorum provident pariatur, quas, nihil dolor, commodi consequatur adipisci non ab asperiores harum minus? Eligendi ut distinctio, totam alias doloribus cum voluptatem ipsum velit a incidunt commodi cumque minus omnis.
                 </div>
             </section>
-
         </div>
     )
 }
