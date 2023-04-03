@@ -11,10 +11,37 @@
 }
 
 #About {
+    position: relative;
     background-color: white;
-    height: 100%;
+    min-height: 100%;
     @include flexCenter(row, true)
 }
+
+.about-us-position-div {
+    border: 2px solid blue;
+    width: 150px;
+    height: 100px;
+    position: relative;
+
+    .about-us-image-above-1150px {
+        position: absolute;
+        top: -210px;
+        left: 120px;
+        width: 350px;
+    }
+
+    .about-us-image-below-1150px {
+        display: none;
+    }
+
+    .about-us-float-container#below-1150px {
+        float: left;
+        width: 300px;
+        height: 100px;
+        margin: 0px 16px 10px 0px;
+    }
+}
+
 
 .about-us-content-wrapper {
     @include flexCenter(column, true) {
@@ -26,31 +53,101 @@
     background-color: rgba(172, 170, 170, 0.175);
     padding: 20px;
     border-radius: 15px;
-    height: 400px;
+    min-height: 400px;
     box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2),
     0 1px 2px hsla(0, 0%, 0%, 0.2);
 
-    .about-us-title {
-        font-size: 2em;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
+
 
     .about-us-content {
         position: relative;
+        height: 100%;
+
+
+        .about-us-text-content-wrapper {
+            @include flexCenter(column, false) {
+                justify-content: center
+            }
+
+            ;
+            // border: 2px solid blue;
+            height: 100%;
+
+
+            .about-us-title {
+                font-size: 2em;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                margin-bottom: 10px;
+            }
+        }
 
         .about-us-float-container {
             float: left;
             border: 2px solid red;
-            width: 200px;
-            height: 110px;
+            width: 300px;
+            height: 100%;
             margin: 0px 16px 10px 0px;
         }
 
-        .about-us-image {
-            position: absolute;
-            top: -60px;
-            left: -100px;
-            width: 300px;
+    }
+}
+
+.about-us-image {
+    display: none;
+}
+
+@media screen and (max-width:1150px) {
+    .about-us-image-above-1150px#below-1150px {
+        display: none;
+    }
+
+    //https://stackoverflow.com/questions/19038240/media-query-styles-not-overriding-original-styles
+    //id is here to increase CSS specificity
+    .about-us-image-below-1150px#below-1150px {
+        display: block;
+        position: absolute;
+        width: 500px;
+        top: -235px;
+    }
+
+    .about-us-float-container#below-1150px {
+        display: none;
+    }
+
+    .about-us-text-content-wrapper#below-1150px {
+        display: block;
+
+        .text-content-float-container#below-1150px {
+            height: 120px;
+            width: 350px;
+            border: 2px solid red;
+            float: left;
         }
     }
+}
+
+@media screen and (max-width:840px) {
+
+    .about-us-title.small {
+        text-align: center;
+    }
+
+    .about-us-text-content-wrapper {
+        // display: none;
+    }
+
+    .about-us-position-div.small#below-1150px {
+        display: none;
+    }
+
+    .text-content-float-container.small#below-1150px {
+        display: none;
+    }
+
+    .about-us-image.small {
+        display: block;
+        width: 100%;
+    }
+
+
 }
