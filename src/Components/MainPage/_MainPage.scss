@@ -224,7 +224,19 @@ $shop-title-font-size: 3em;
         }
     }
 
-    .vertical-line {
-        opacity: 0;
+    .shop-image.medium#increase-specificity {
+        pointer-events: none;
+        user-select: none;
     }
+
+    .vertical-line-and-shop-image-wrapper {
+        &:hover .shop-image.medium {
+            opacity: 1 !important; //overwrite 
+        }
+
+        .vertical-line {
+            opacity: 0;
+        }
+    }
+
 }

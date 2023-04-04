@@ -95,7 +95,7 @@ export default function MainPage() {
                             </div>
                         </div>
                     </div>
-                    <img src={PlaceholderImage} className='shop-image' />
+                    <img src={PlaceholderImage} className='shop-image medium' />
                 </div>
 
             </div>

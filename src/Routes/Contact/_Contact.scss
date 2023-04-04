@@ -1,6 +1,12 @@
-@mixin flexDisplay($direction: row) {
+@mixin flexDisplay($direction: row, $center-contents: false) {
     display: flex;
     flex-direction: $direction;
+
+    @if($center-contents) {
+        justify-content: center;
+        align-items: center;
+    }
+
     @content
 }
 
@@ -20,9 +26,18 @@
 
 .contact-content {
     background-color: rgba(172, 170, 170, 0.175);
-    padding: 20px;
-    border-radius: 15px;
-    width: max(300px, 60%);
-    min-height: 50%;
+    margin: auto;
+    width: 65%;
+    min-height: 90%;
     box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+}
+
+.linkedIn-section-wrapper {
+    border: 2px solid red;
+    @include flexDisplay(row, false);
+
+
+    .linkedIn-info-image {
+        width: 200px;
+    }
 }
