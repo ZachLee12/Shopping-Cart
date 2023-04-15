@@ -86,20 +86,20 @@ $shop-title-font-size: 3em;
         &:hover .vertical-line {
             width: 300px;
             background-color: rgba(178, 175, 175, 0.5);
-            transition: width 400ms ease-in-out,
-                background-color 400ms ease-in-out;
+            transition: width 200ms ease-in-out,
+                background-color 200ms ease-in-out;
         }
 
         &:not(:hover) .vertical-line {
             width: 10px;
             background-color: white;
-            transition: width 400ms ease-in-out 400ms,
-                background-color 400ms ease-in-out 800ms;
+            transition: width 300ms ease-in-out 300ms,
+                background-color 400ms ease-in-out 600ms;
         }
 
         //hover: HIDDEN-CONTENTS
         &:hover .vertical-line .hidden-contents {
-            transition: opacity 400ms ease-in-out 400ms;
+            transition: opacity 200ms ease-in-out 300ms;
             opacity: 1;
         }
 
@@ -115,7 +115,7 @@ $shop-title-font-size: 3em;
         }
 
         &:not(:hover) .shop-image {
-            transition: opacity 400ms ease-in-out 1050ms;
+            transition: opacity 400ms ease-in-out 650ms;
             opacity: 1;
         }
 
