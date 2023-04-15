@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { itemList as fullItemList } from "../../shopItems"
-
+import { Link } from 'react-router-dom';
 
 // Checkout works a little different. It has no state.
 // Since a button must be clicked to mount Checkout, it will directly update itself by
@@ -35,22 +35,28 @@ export default function Checkout({ renderCheckout, handleClickUnmountCheckout, }
                             <div key={item.id} className='checkout-item'>
                                 <img className='checkout-item-image' src={item.image} alt="shop-item-image" />
                                 <div className="checkout-item-details-wrapper">
-                                    <p className='checkout-item-name'>{item.name}</p>
-                                    <p className='checkout-item-unit-price'>Unit price: {item.price}</p>
-                                    <p className='checkout-item-units'>Units: {item.units}</p>
-                                    <p className='checkout-item-total-price'>Total Price: {item.totalPrice}</p>
+                                    <p className='checkout-item-name item-detail'>{item.name}</p>
+                                    <p className='checkout-item-unit-price item-detail'>Unit price: {item.price}</p>
+                                    <p className='checkout-item-units item-detail'>Units: {item.units}</p>
+                                    <p className='checkout-item-total-price item-detail'>Total Price: {item.totalPrice.toFixed(2)}</p>
                                 </div>
                             </div>
                         )}
-                        <p>Final Price: {getFinalPrice(searchCart)}</p>
+                        <p className='final-price'>Final Price: {getFinalPrice(searchCart) + ' CHF'}</p>
 
                     </div>
-                    <button
-                        onClick={handleClickUnmountCheckout}
-                        className="buy-now-button">
-                        Buy now!
-                    </button>
-                    <button onClick={handleClickUnmountCheckout} className="go-back-to-cart-button"> Go back to Cart</button>
+                    <div className="link-and-button-wrapper">
+                        <Link
+                            to={'/thankyou'}
+                            // onClick={handleClickUnmountCheckout}
+                            className="buy-now-link clickable">
+                            Buy now!
+                        </Link>
+                        <button
+                            onClick={handleClickUnmountCheckout}
+                            className="go-back-to-cart-button clickable"> Go back to Cart
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
