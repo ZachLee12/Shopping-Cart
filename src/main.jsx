@@ -14,6 +14,7 @@ import {
 import { loader as shopLoader } from './Routes/Shop/Shop'
 import Favourites from './Routes/Favourites/Favourites'
 import MainPage from './Components/MainPage/MainPage'
+import Features from './Routes/Features/Features'
 
 const hashRouter = createHashRouter([
   {
@@ -45,6 +46,10 @@ const hashRouter = createHashRouter([
       {
         path: '/cart',
         element: <Cart />
+      },
+      {
+        path: '/feature/:featureType',
+        element: <Features />
       }
     ]
   },

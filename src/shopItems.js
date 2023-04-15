@@ -16,6 +16,7 @@ export const itemList = [{
     totalPrice: 10.00,
     addedToCart: true,
     isFavourite: true,
+    features: ['trendy', 'mountain-meister'],
     description: 'This is a sample description about the ShopItem.'
 }, {
     image: Clothes1,
@@ -27,6 +28,7 @@ export const itemList = [{
     totalPrice: 10.20,
     addedToCart: true,
     isFavourite: false,
+    features: ['trendy', 'adventurous', 'mountain-meister'],
     description: 'This is a sample description about the ShopItem.'
 },
 {
@@ -39,6 +41,7 @@ export const itemList = [{
     totalPrice: 12.34,
     addedToCart: false,
     isFavourite: false,
+    features: ['', 'mountain-meister'],
     description: 'This is a sample description about the ShopItem.'
 },
 {
@@ -51,6 +54,7 @@ export const itemList = [{
     totalPrice: 12.34,
     addedToCart: false,
     isFavourite: false,
+    features: ['trendy', 'adventurous', 'mountain-meister'],
     description: 'This is a sample description about the ShopItem.'
 }, {
     image: Clothes3,
@@ -62,6 +66,7 @@ export const itemList = [{
     totalPrice: 12.34,
     addedToCart: false,
     isFavourite: true,
+    features: ['', 'mountain-meister'],
     description: 'This is a sample description about the ShopItem.'
 }, {
     image: Clothes4,
@@ -73,6 +78,7 @@ export const itemList = [{
     totalPrice: 16.99,
     addedToCart: false,
     isFavourite: false,
+    features: ['', 'mountain-meister'],
     description: 'This is a sample description about the ShopItem.'
 }, {
     image: Clothes3,
@@ -84,6 +90,7 @@ export const itemList = [{
     units: 1,
     addedToCart: false,
     isFavourite: false,
+    features: ['', 'mountain-meister'],
     description: 'This is a sample description about the ShopItem.'
 },]
 

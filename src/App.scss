@@ -161,8 +161,8 @@ body {
         z-index: 1;
         right: 30px;
         bottom: 10px;
-        height: 80px;
-        width: 80px;
+        height: 70px;
+        width: 70px;
         background-image: url('./assets/images/shopping-cart.png');
         background-size: 50px;
         @include link-to-cart-style();
@@ -183,6 +183,4 @@ body {
         flex-grow: 1;
         overflow-y: auto;
     }
-
 }
-

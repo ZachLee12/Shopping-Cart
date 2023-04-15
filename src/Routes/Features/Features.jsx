@@ -1,22 +1,35 @@
-import { itemList as fullItemList } from "../../shopItems";
-import ShopItem from "../../Components/ShopItem/ShopItem";
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import './_Features.scss'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { itemList as fullItemList } from '../../shopItems'
+import { useEffect } from 'react'
+import ShopItem from '../../Components/ShopItem/ShopItem'
 import ArrowLeft from '../../assets/images/arrow-left.png'
+import { useState } from 'react'
 
-export default function Favourites() {
+export default function Features() {
+    const location = useLocation()
+    const { featureType } = location.state
     const navigate = useNavigate();
     const goBack = () => {
         navigate(-1)
     }
-    
-    const searchFavourites = (() => {
-        return fullItemList.filter(item => item.isFavourite)
-    })();
 
-    const [favourite, setFavourite] = React.useState({
-        itemList: searchFavourites
-    });
+    const getDescription = () => {
+        switch (featureType) {
+            case 'trendy':
+                return 'Discover the latest hiking trends.'
+
+            case 'mountain-meister':
+                return 'Up your level, set your game.'
+
+            case 'adventurous':
+                return 'An adventure of a lifetime.'
+        }
+    }
+
+    const getFeatureItems = () => {
+        return fullItemList.filter(item => item.features.includes(featureType))
+    }
 
     const handleClickIsFavourite = (e) => {
         const toggleIsFavourite = (item) => {
@@ -50,18 +63,28 @@ export default function Favourites() {
             ...favourite.itemList,
             itemList: copyList
         })
+
+        console.log(favourite.itemList)
     }
 
+    useEffect(() => {
+        console.log(featureType)
+    })
+
     return (
-        <div id="Favourites">
+        <div id='Features'>
             <button onClick={goBack} className="go-back-btn-wrapper">
                 <img src={ArrowLeft} alt="" />
                 <p className="back-to-shop-title">Back To Shop</p>
             </button>
-            <p className="favourites-title">Favourites</p>
-            <p className="favourites-title-caption"><i>All your favourite styles.</i></p>
-            <div className="favourites-wrapper">
-                {favourite.itemList.length > 0 && searchFavourites.map(item => {
+            <p className="feature-title">{featureType[0].toUpperCase() + featureType.slice(1)}</p>
+            <p className="feature-title-caption">
+                <i>
+                    {getDescription()}
+                </i>
+            </p>
+            <div className="feature-items-wrapper">
+                {getFeatureItems().map(item => {
                     return (
                         <ShopItem
                             image={item.image}
@@ -78,13 +101,6 @@ export default function Favourites() {
                         />
                     )
                 })}
-
-                {/* depends on searchFavourites here to render it even before favourite.itemList updated */}
-                {searchFavourites.length === 0 &&
-                    <div className="no-favourites-wrapper">
-                        <p className="no-favourites-title">No Favourites. ☹️</p>
-                    </div>
-                }
             </div>
         </div>
     )

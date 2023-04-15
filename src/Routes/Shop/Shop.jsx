@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ShopItem from "../../Components/ShopItem/ShopItem";
 import {
     itemList as fullItemList,
@@ -6,7 +6,6 @@ import {
 } from "../../shopItems";
 import uniqid from 'uniqid';
 
-import MenuIcon from '../../assets/images/menu.png'
 import { Link } from "react-router-dom";
 import { Form, useLoaderData, useSubmit } from 'react-router-dom'
 
@@ -37,18 +36,18 @@ export default function Shop(props) {
                 id: uniqid(),
                 isActive: false
             },
-            placeholder1: {
-                name: 'Placeholder 1',
+            trendy: {
+                name: 'Trendy',
                 id: uniqid(),
                 isActive: false
             },
-            placeholder2: {
-                name: 'Placeholder 2',
+            adventurous: {
+                name: `Adventurous`,
                 id: uniqid(),
                 isActive: false
             },
-            placeholder3: {
-                name: 'Placeholder 3',
+            mountainMeister: {
+                name: 'Mountain-Meister',
                 id: uniqid(),
                 isActive: false
             }
@@ -114,30 +113,36 @@ export default function Shop(props) {
                     </div>
                     <div className="link-wrapper">
                         <Link
+                            state={{ featureType: 'trendy' }}
+                            to={'/feature/trendy'}
                             className='sidebar-link'>
                             <span
-                                id={shop.links.placeholder1.id}
-                            >{shop.links.placeholder1.name}</span>
+                                id={shop.links.trendy.id}
+                            >{shop.links.trendy.name}</span>
                         </Link>
-                        <div className={`sidebar-link-horizontal-line ${shop.links.placeholder1.isActive ? 'active-sidebar-horizontal-line' : ''}`}></div>
+                        <div className={`sidebar-link-horizontal-line ${shop.links.trendy.isActive ? 'active-sidebar-horizontal-line' : ''}`}></div>
                     </div>
                     <div className="link-wrapper">
                         <Link
-                            id={shop.links.placeholder2.id}
+                            state={{ featureType: 'adventurous' }}
+                            to={'/feature/adventurous'}
+                            id={shop.links.adventurous.id}
                             className='sidebar-link'>
                             <span
-                                id={shop.links.placeholder2.id}
-                            >{shop.links.placeholder2.name}</span>
+                                id={shop.links.adventurous.id}
+                            >{shop.links.adventurous.name}</span>
                         </Link>
                         <div className="sidebar-link-horizontal-line"></div>
                     </div>
                     <div className="link-wrapper">
                         <Link
-                            id={shop.links.placeholder3.id}
+                            state={{ featureType: 'mountain-meister' }}
+                            to={'/feature/mountain-meister'}
+                            id={shop.links.mountainMeister.id}
                             className='sidebar-link'>
                             <span
-                                id={shop.links.placeholder3.id}
-                            >{shop.links.placeholder3.name}</span>
+                                id={shop.links.mountainMeister.id}
+                            >{shop.links.mountainMeister.name}</span>
                         </Link>
                         <div className="sidebar-link-horizontal-line"></div>
                     </div>

@@ -185,9 +185,6 @@ export default function App() {
 
         <section className="main-content-wrapper">
           <Link to={'/cart'} className='link-to-cart'>
-            <div className="number-of-cart-items">
-              {fullItemList.filter(item => item.addedToCart).length}
-            </div>
           </Link>
           <div className="outlet-wrapper">
             <Outlet />
