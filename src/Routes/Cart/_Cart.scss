@@ -8,6 +8,15 @@
     height: 100%;
 }
 
+.cart-title {
+    user-select: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    margin: 10px 0;
+    text-align: center;
+    text-decoration: underline;
+}
+
 .cart-wrapper {
     height: 100%;
     //for grid layout

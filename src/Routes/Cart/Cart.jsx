@@ -89,7 +89,7 @@ export default function Cart() {
 
     return (
         <div id='Cart'>
-            <h1>Cart</h1>
+            <p className="cart-title">Your Cart</p>
             <div className="cart-wrapper">
                 {searchCart.map(item => {
                     return (
