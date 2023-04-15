@@ -1,5 +1,6 @@
 import React from "react";
 import ShopItem from "../../Components/ShopItem/ShopItem";
+import HikingInkArt from '../../assets/images/hiking-ink-art.png'
 import {
     itemList as fullItemList,
     searchItems
@@ -101,6 +102,8 @@ export default function Shop(props) {
         <div id='Shop'>
             <div className="sidebar-wrapper">
                 <div className={`sidebar ${shop.showSideBar ? 'show-sidebar' : ''}`}>
+                    
+                    <img src={HikingInkArt} className="hiking-ink-art-image"/>
                     <div className="link-wrapper">
                         <Link
                             to={'/favourites'}
@@ -147,6 +150,8 @@ export default function Shop(props) {
                         <div className="sidebar-link-horizontal-line"></div>
                     </div>
                 </div>
+                {/* END OF SIDE BAR */}
+
                 <div
                     onClick={toggleSideBar}
                     className="menu-panel"
