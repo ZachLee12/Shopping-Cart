@@ -49,7 +49,13 @@ export default function Favourites() {
             ...favourite.itemList,
             itemList: copyList
         })
+
+        console.log(favourite.itemList)
     }
+
+    useEffect(() => {
+        console.log(favourite.itemList)
+    })
 
     return (
         <div id="Favourites">
@@ -58,8 +64,9 @@ export default function Favourites() {
                 <p className="back-to-shop-title">Back To Shop</p>
             </button>
             <p className="favourites-title">Favourites</p>
+            <p className="favourites-title-caption"><i>All your favourite styles.</i></p>
             <div className="favourites-wrapper">
-                {searchFavourites.map(item => {
+                {favourite.itemList.length > 0 && searchFavourites.map(item => {
                     return (
                         <ShopItem
                             image={item.image}
@@ -76,6 +83,13 @@ export default function Favourites() {
                         />
                     )
                 })}
+
+                {/* depends on searchFavourites here to render it even before favourite.itemList updated */}
+                {searchFavourites.length === 0 &&
+                    <div className="no-favourites-wrapper">
+                        <p className="no-favourites-title">No Favourites. ☹️</p>
+                    </div>
+                }
             </div>
         </div>
     )
