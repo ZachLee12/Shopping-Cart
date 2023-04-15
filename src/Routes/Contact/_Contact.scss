@@ -12,70 +12,45 @@
 
 
 #Contact {
-    background-color: white;
+    position: relative;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
     width: 100%;
-    overflow-y: auto;
-
-    @include flexDisplay(row) {
-        justify-content: center;
-        align-items: center;
-    }
-
-    ;
 }
 
 .contact-content {
     background-color: rgba(187, 13, 13, 0.175);
     border-radius: 15px;
     margin: 50px 0px 100px 0px;
-    width: 65%;
-    min-height: 90%;
+    height: 100%;
+    width: clamp(300px, 65%, 1300px);
     box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
 }
 
-.linkedIn-section-wrapper {
 
-    // border: 2px solid red;
-    @include flexDisplay(row, false) {
-        align-items: center
-    }
-
-    ;
-
-    .linkedIn-info-image.info-image {
-        position: relative;
-
-    }
-
-    .linkedIn-info-wrapper {
-        position: absolute;
-        left: 0px;
-        width: 400px;
-    }
-}
-
-.location-section-wrapper {
-    @include flexDisplay(row, true);
-    // border: 2px solid red;
-
-    .location-info-wrapper {
-        border: 2px solid blue;
-
-    }
+.linkedIn-info-image.info-image {
+    position: relative;
 
 }
 
-.email-section-wrapper {
-    @include flexDisplay(row, true);
-    // border: 2px solid red;
+.linkedIn-info-wrapper {}
 
-    .email-info-wrapper {
-        border: 2px solid blue;
-        width: 100%;
-    }
+
+.location-info-wrapper {
+    border: 2px solid blue;
+
 }
 
 
+
+.email-info-wrapper {
+    border: 2px solid blue;
+    width: 100%;
+}
 
 
 
