@@ -110,8 +110,6 @@ export default function Cart() {
                     )
                 })}
             </div>
-
-
             <div className="positioning-wrapper">
                 <button
                     onClick={handleClickMountCheckout}
