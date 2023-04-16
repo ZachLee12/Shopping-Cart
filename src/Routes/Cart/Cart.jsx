@@ -123,6 +123,7 @@ export default function Cart() {
                 renderCheckout={cart.renderCheckout}
                 handleClickUnmountCheckout={handleClickUnmountCheckout}
             />
+            
         </div>
     )
 }
