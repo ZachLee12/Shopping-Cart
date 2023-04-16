@@ -23,70 +23,109 @@
 }
 
 .contact-content {
-    background-color: rgba(187, 13, 13, 0.175);
+    background-image: url('@/assets/images/mountain3.jpg');
+    background-size: 140% 140%;
+    background-repeat: no-repeat;
+    background-position: -100px 0px;
+    animation: animate-background 25s ease-in-out infinite;
+    padding: 20px;
     border-radius: 15px;
     margin: 50px 0px 100px 0px;
-    height: 100%;
-    width: clamp(300px, 65%, 1300px);
+    height: 500px;
+    width: clamp(200px, 65%, 1300px);
     box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+
+    @keyframes animate-background {
+        0% {
+            background-position: 0px -100px;
+        }
+
+        20% {
+            background-position: -45px -30px;
+        }
+
+        40% {
+            background-position: -75px -60px;
+        }
+
+        60% {
+            background-position: -150px -40px;
+        }
+
+        80% {
+            background-position: -45px -30px;
+        }
+
+        100% {
+            background-position: 0px -100px;
+        }
+    }
+
 }
 
 .google-maps {
-    padding: 30px;
+    min-width: clamp(30%, 300px, 40%);
+    height: 100%;
 }
 
+.master-info-wrapper {
+    display: flex;
+    height: 100%;
 
-.linkedIn-info-image.info-image {
-    position: relative;
+    .contact-image {
+        min-width: clamp(30%, 300px, 40%);
+        height: 100%;
+        // background-color: aliceblue;
+        background-image: url('@/assets/images/vertical-image.jpg');
+        background-size: cover;
+        // background-repeat: no-repeat;
+        // background-position: -150px 0px;
+        // animation: animate-background 25s ease-in-out infinite;
+    }
 
+    .contact-info-wrapper {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(242, 240, 240, 0.8);
+        margin: 30px;
+    }
 }
-
-.linkedIn-info-wrapper {}
-
-
-.location-info-wrapper {
-    border: 2px solid blue;
-
-}
-
-
-
-.email-info-wrapper {
-    border: 2px solid blue;
-    width: 100%;
-}
-
 
 
 //general selectors
 .info-wrapper {
     @include flexDisplay(row, true) {
         gap: 10px;
+        justify-content: start; //overwrite
     }
 
-    ;
+    flex-grow: 1;
     border: 2px solid blue;
     background-color: rgba(0, 0, 0, 0.2);
-    height: 200px;
-    width: 100%;
-}
-
-.info-image {
-    width: 250px;
+    // height: 200px;
 }
 
 .info-paragraph {
     position: relative;
-    // bottom: 10px;
-
-
     border: 2px solid red;
     display: inline;
+    word-wrap: break-word;
     margin: 0;
 }
 
 img.icon {
     border: 2px solid red;
     width: 30px;
+}
 
+@media screen and (max-width: 550px) {
+    .master-info-wrapper {
+        flex-direction: column;
+
+        .contact-image {
+            height: 200px;
+        }
+    }
 }
