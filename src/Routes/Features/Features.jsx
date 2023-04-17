@@ -1,10 +1,9 @@
 import './_Features.scss'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { itemList as fullItemList } from '../../shopItems'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import ShopItem from '../../Components/ShopItem/ShopItem'
 import ArrowLeft from '../../assets/images/arrow-left.png'
-import { useState } from 'react'
 
 export default function Features() {
     const location = useLocation()
@@ -13,6 +12,16 @@ export default function Features() {
     const goBack = () => {
         navigate(-1)
     }
+
+    const searchFeature = (() => {
+        return fullItemList.filter(item => item.features.includes(featureType))
+    })();
+    
+    const initialState = {
+        itemList: searchFeature
+    }
+
+    const [feature,setFeature] = useState(initialState)
 
     const getDescription = () => {
         switch (featureType) {
@@ -38,12 +47,12 @@ export default function Features() {
             })
         }
 
-        let itemToChangeIndex = favourite.itemList.findIndex(item => item.id === e.target.id)
-        let copyList = [...favourite.itemList]
+        let itemToChangeIndex = feature.itemList.findIndex(item => item.id === e.target.id)
+        let copyList = [...feature.itemList]
         copyList[itemToChangeIndex] = toggleIsFavourite(copyList[itemToChangeIndex])
 
-        setFavourite({
-            ...favourite.itemList,
+        setFeature({
+            ...feature.itemList,
             itemList: copyList
         })
     }
@@ -55,21 +64,17 @@ export default function Features() {
             })
         }
 
-        let itemToChangeIndex = favourite.itemList.findIndex(item => item.id === e.target.id)
-        let copyList = [...favourite.itemList]
+        let itemToChangeIndex = feature.itemList.findIndex(item => item.id === e.target.id)
+        let copyList = [...feature.itemList]
         copyList[itemToChangeIndex] = toggleAddToCart(copyList[itemToChangeIndex])
 
-        setFavourite({
-            ...favourite.itemList,
+        setFeature({
+            ...feature.itemList,
             itemList: copyList
         })
 
-        console.log(favourite.itemList)
     }
 
-    useEffect(() => {
-        console.log(featureType)
-    })
 
     return (
         <div id='Features'>

@@ -1,6 +1,6 @@
 import { itemList as fullItemList } from "../../shopItems";
 import ShopItem from "../../Components/ShopItem/ShopItem";
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import ArrowLeft from '../../assets/images/arrow-left.png'
 
