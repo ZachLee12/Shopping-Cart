@@ -155,6 +155,7 @@ export default function App() {
         <header className='header'>
           <Link
             to={'/'}
+            onClick={handleClickMain}
             className="shop-name"
           >
 
