@@ -153,7 +153,13 @@ export default function App() {
     <div id="App">
       <div className="opacity-film-wrapper">
         <header className='header'>
-          <div className="shop-name">Shop Name</div>
+          <Link
+            to={'/'}
+            className="shop-name"
+          >
+
+            Shop Name
+          </Link>
           <div className='nagivation-tabs-wrapper'>
             <Link onClick={handleClickMain}
               to={'/'}
