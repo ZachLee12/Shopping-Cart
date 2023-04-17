@@ -49,13 +49,13 @@ export default function Contact() {
                         <div className="location-info-wrapper info-wrapper">
                             <img src={LocationIcon} className="icon" />
                             <p className='info-paragraph'>
-                                Strasse, 6006 Kanton
+                                Leipzig, 1234 Mountain
                             </p>
                         </div>
                         <div className="email-info-wrapper info-wrapper">
                             <img src={EmailIcon} className="icon" />
                             <p className='info-paragraph email'>
-                                email@ email.com
+                                myEmail@ email.com
                             </p>
                         </div>
                     </div>

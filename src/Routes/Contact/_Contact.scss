@@ -122,6 +122,13 @@ img.icon {
     width: 30px;
 }
 
+@media screen and (max-width: 770px) {
+    .contact-content {
+        background-size: 260% 120%;
+
+    }
+}
+
 @media screen and (max-width: 920px) {
     .google-maps {
         height: 40%;
@@ -130,12 +137,6 @@ img.icon {
     .master-info-wrapper {
         flex-direction: column;
         gap: 30px;
-
-        .contact-image {
-            height: 200px;
-            background-size: cover;
-            animation: none !important;
-        }
 
         .contact-info-wrapper {
 
