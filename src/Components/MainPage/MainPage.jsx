@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
-import PlaceholderImage from '../../assets/images/placeholderImage.jpg'
-import OtherPlaceholderImage from '../../assets/images/clothes6.jpg'
-import Image3 from '../../assets/images/clothes1.jpg'
-import Image4 from '../../assets/images/clothes2.webp'
-import Image5 from '../../assets/images/clothes3.webp'
+
+import Mountain from '../../assets/images/Placeholder.jpg'
+import Jacket1 from '../../assets/images/shopItem12-women-attire.webp'
+import Jacket2 from '../../assets/images/shopItem11-jacket.webp'
+import Backpack3 from '../../assets/images/shopItem3-backpack.webp'
+import HikingSticks from '../../assets/images/shopItem4-sticks.webp'
+import HikingGearSet from '../../assets/images/shopItem1-backpack.jpg'
 
 export default function MainPage() {
     const carouselImageList =
-        [OtherPlaceholderImage,
-            PlaceholderImage,
-            Image3,
-            Image4,
-            Image5]
+        [Jacket1,
+            HikingSticks,
+            Backpack3,
+            Jacket2,
+            HikingGearSet]
 
     const initialState = {
         currentImageIndex: 0,
@@ -95,7 +96,7 @@ export default function MainPage() {
                             </div>
                         </div>
                     </div>
-                    <img src={PlaceholderImage} className='shop-image medium' />
+                    <img src={Mountain} className='shop-image medium' />
                 </div>
 
             </div>

@@ -18,7 +18,7 @@
 }
 
 .ShopItem {
-    max-width: 300px;
+    width: 300px;
     background-color: whitesmoke;
     padding-bottom: 10px;
     box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
@@ -34,7 +34,7 @@
             .ShopItem-image {
                 transition: transform 300ms ease-in-out;
                 height: 300px;
-                width: 100%;
+                // width: 100%;
             }
         }
 

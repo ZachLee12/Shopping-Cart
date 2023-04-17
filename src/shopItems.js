@@ -1,16 +1,16 @@
-import PlaceholderImage from './assets/images/placeholderImage.jpg'
 import HikingGearSet from './assets/images/shopItem1-backpack.jpg'
 import Backpack2 from './assets/images/shopItem2-backpack.jpg'
 import Backpack3 from './assets/images/shopItem3-backpack.webp'
 import HikingSticks from './assets/images/shopItem4-sticks.webp'
 import HikingSticks2 from './assets/images/shopItem5-sticks.jpeg'
 import HikingSticks3 from './assets/images/shopItem6-sticks.jpeg'
-import MenAttire1 from './assets/images/shopItem7-men-attire.jpg'
-import MenAttire2 from './assets/images/shopItem8-men-attire.jpg'
-import MenAttire3 from './assets/images/shopItem9-men-attire.jpg'
-import Shoe from './assets/images/shopItem10-shoes.png'
-import WomenAttire1 from './assets/images/shopItem11-women-attire.jpeg'
-import WomenAttire2 from './assets/images/shopItem12-women-attire.webp'
+import Shoe1 from './assets/images/shopItem7-shoe.jpg'
+import Thermos1 from './assets/images/shopItem8-thermos.jpg'
+import Bottle1 from './assets/images/shopItem9-bottle.jpg'
+import Shoe2 from './assets/images/shopItem10-shoes.png'
+import Jacket1 from './assets/images/shopItem12-women-attire.webp'
+import Jacket2 from './assets/images/shopItem11-jacket.webp'
+import Jacket3 from './assets/images/shopItem13-jacket.jpg'
 import uniqid from 'uniqid';
 
 // `price` here is in string, because otherwise 10.00 will mount as 10
@@ -83,8 +83,8 @@ export const itemList = [{
     isFavourite: false,
     features: ['', 'mountain-meister'],
 }, {
-    image: MenAttire1,
-    name: 'Waterproof Windbreaker',
+    image: Shoe1,
+    name: 'Waterproof Hiking Boots',
     id: uniqid(),
     price: 120,
     totalPrice: 120,
@@ -95,11 +95,11 @@ export const itemList = [{
     features: ['mountain-meister'],
 },
 {
-    image: MenAttire2,
-    name: `Men's Full Hiking Set`,
+    image: Thermos1,
+    name: `3L Thermos`,
     id: uniqid(),
-    price: 250,
-    totalPrice: 250,
+    price: 60,
+    totalPrice: 60,
     displayAsCartItem: false,
     units: 1,
     addedToCart: false,
@@ -108,11 +108,11 @@ export const itemList = [{
 },
 
 {
-    image: MenAttire3,
-    name: `Men's Summer Hiking Set`,
+    image: Bottle1,
+    name: `5L Bottle`,
     id: uniqid(),
-    price: 170,
-    totalPrice: 170,
+    price: 70,
+    totalPrice: 70,
     displayAsCartItem: false,
     units: 1,
     addedToCart: false,
@@ -121,7 +121,7 @@ export const itemList = [{
 },
 
 {
-    image: Shoe,
+    image: Shoe2,
     name: `Ultra Compact Hiking Boots`,
     id: uniqid(),
     price: 70,
@@ -134,11 +134,11 @@ export const itemList = [{
 },
 
 {
-    image: WomenAttire1,
-    name: `Women's Full Hiking Set`,
+    image: Jacket1,
+    name: `Waterproof Windbreaker`,
     id: uniqid(),
-    price: 70,
-    totalPrice: 70,
+    price: 170,
+    totalPrice: 170,
     displayAsCartItem: false,
     units: 1,
     addedToCart: false,
@@ -147,11 +147,24 @@ export const itemList = [{
 },
 
 {
-    image: WomenAttire2,
-    name: `Women's Summer Hiking Set`,
+    image: Jacket2,
+    name: `Winter Hiking Jacket`,
     id: uniqid(),
-    price: 70,
-    totalPrice: 70,
+    price: 210,
+    totalPrice: 210,
+    displayAsCartItem: false,
+    units: 1,
+    addedToCart: false,
+    isFavourite: false,
+    features: ['mountain-meister'],
+},
+
+{
+    image: Jacket3,
+    name: `Compact Hiking Jacket`,
+    id: uniqid(),
+    price: 120,
+    totalPrice: 120,
     displayAsCartItem: false,
     units: 1,
     addedToCart: false,

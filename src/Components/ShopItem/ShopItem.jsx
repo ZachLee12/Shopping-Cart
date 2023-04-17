@@ -1,6 +1,4 @@
 import React, { createContext, useContext, useEffect } from "react";
-import FilledStar from '../../assets/images/filled-star.png'
-import EmptyStar from '../../assets/images/empty-star.png'
 import { searchItems } from "../../shopItems";
 import '../../assets/fonts/Roboto/Roboto-Medium.ttf'
 
