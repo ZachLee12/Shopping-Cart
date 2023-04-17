@@ -46,7 +46,7 @@ export default function ShopItem(props) {
                 <figcaption>
                     <p className="ShopItem-name">{props.name}</p>
                     {/* <p className="ShopItem-description">{props.description}</p> */}
-                    <p className="price">${props.price}</p>
+                    <p className="price">{Number(props.price).toFixed(2)} CHF</p>
 
                     {props.displayAsCartItem &&
                         <div className="cart-information-wrapper">
@@ -59,7 +59,7 @@ export default function ShopItem(props) {
                                     onChange={handleChangeUnits}
                                     defaultValue={shopItem.units}
                                 /></p>
-                            <p>Total: {shopItem.totalPrice}</p>
+                            <p>Total: {Number(shopItem.totalPrice).toFixed(2)} CHF</p>
                         </div>
                     }
                 </figcaption>

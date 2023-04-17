@@ -38,7 +38,7 @@ export default function Checkout({ renderCheckout, handleClickUnmountCheckout, }
                                     <p className='checkout-item-name item-detail'>{item.name}</p>
                                     <p className='checkout-item-unit-price item-detail'>Unit price: {item.price}</p>
                                     <p className='checkout-item-units item-detail'>Units: {item.units}</p>
-                                    <p className='checkout-item-total-price item-detail'>Total Price: {item.totalPrice.toFixed(2)}</p>
+                                    <p className='checkout-item-total-price item-detail'>Total Price: {Number(item.totalPrice).toFixed(2)} CHF</p>
                                 </div>
                             </div>
                         )}

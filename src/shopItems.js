@@ -10,7 +10,7 @@ export const itemList = [{
     image: PlaceholderImage,
     name: 'Nice Image',
     id: uniqid(),
-    price: '10.00',
+    price: 10,
     displayAsCartItem: false,
     units: 1,
     totalPrice: 10.00,
