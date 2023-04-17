@@ -22,8 +22,8 @@ export const itemList = [{
     displayAsCartItem: false,
     units: 1,
     totalPrice: 150,
-    addedToCart: true,
-    isFavourite: true,
+    addedToCart: false,
+    isFavourite: false,
     features: ['trendy', 'mountain-meister'],
 }, {
     image: Backpack2,
@@ -33,9 +33,9 @@ export const itemList = [{
     displayAsCartItem: false,
     units: 1,
     totalPrice: 70,
-    addedToCart: true,
+    addedToCart: false,
     isFavourite: false,
-    features: ['trendy', 'adventurous', 'mountain-meister'],
+    features: ['trendy', 'adventurous',],
 },
 {
     image: Backpack3,
@@ -69,8 +69,8 @@ export const itemList = [{
     units: 1,
     totalPrice: 55,
     addedToCart: false,
-    isFavourite: true,
-    features: ['', 'mountain-meister'],
+    isFavourite: false,
+    features: ['adventurous'],
 }, {
     image: HikingSticks3,
     name: 'Ultra Strong Hiking Sticks',
@@ -81,7 +81,7 @@ export const itemList = [{
     totalPrice: 80,
     addedToCart: false,
     isFavourite: false,
-    features: ['', 'mountain-meister'],
+    features: ['trendy', 'mountain-meister'],
 }, {
     image: Shoe1,
     name: 'Waterproof Hiking Boots',
@@ -104,7 +104,7 @@ export const itemList = [{
     units: 1,
     addedToCart: false,
     isFavourite: false,
-    features: ['mountain-meister'],
+    features: ['trendy'],
 },
 
 {
@@ -117,7 +117,7 @@ export const itemList = [{
     units: 1,
     addedToCart: false,
     isFavourite: false,
-    features: ['mountain-meister'],
+    features: ['mountain-meister', 'adventurous'],
 },
 
 {
@@ -130,7 +130,7 @@ export const itemList = [{
     units: 1,
     addedToCart: false,
     isFavourite: false,
-    features: ['mountain-meister'],
+    features: ['trendy'],
 },
 
 {
@@ -156,7 +156,7 @@ export const itemList = [{
     units: 1,
     addedToCart: false,
     isFavourite: false,
-    features: ['mountain-meister'],
+    features: ['trendy', 'adventurous'],
 },
 
 {
@@ -169,7 +169,7 @@ export const itemList = [{
     units: 1,
     addedToCart: false,
     isFavourite: false,
-    features: ['mountain-meister'],
+    features: ['trendy', 'mountain-meister'],
 },
 
 ]
