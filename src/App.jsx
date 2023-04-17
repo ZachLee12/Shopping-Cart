@@ -158,7 +158,6 @@ export default function App() {
             onClick={handleClickMain}
             className="shop-name"
           >
-
             Shop Name
           </Link>
           <div className='nagivation-tabs-wrapper'>
