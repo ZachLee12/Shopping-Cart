@@ -21,8 +21,11 @@ export default function About() {
                         <div className="text-content-float-container small" id='below-1150px'></div>
                         <p className='about-us-title small'>About Us</p>
                         <div className="about-us-text">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore ab cumque id, consequatur voluptatum, voluptatibus magnam unde expedita deserunt ipsa in. Eaque vero deleniti eligendi esse, odit sed nemo nisi.
-                            Dolorum provident pariatur, quas, nihil dolor, commodi consequatur adipisci non ab asperiores harum minus? Eligendi ut distinctio, totam alias doloribus cum voluptatem ipsum velit a incidunt commodi cumque minus omnis.
+                            At our hiking gear shop, we understand the importance of having reliable and high-quality equipment when exploring the great outdoors. Whether you're a seasoned adventurer or just starting out, we have everything you need to make your next hike safe, comfortable, and enjoyable.
+
+                            Our team consists of experienced hikers and outdoor enthusiasts who are passionate about helping you find the perfect gear for your next adventure. 
+
+                            We also understand the importance of sustainability and minimizing our impact on the environment. Come visit us today and let us help you gear up for your next outdoor excursion!
                         </div>
                     </div>
                 </div>

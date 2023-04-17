@@ -69,13 +69,16 @@ $shop-title-font-size: 3em;
     p.shop-title {
         margin: auto;
         font-size: $shop-title-font-size;
-        color: wheat;
+        color: white;
         user-select: none;
+        font-weight: bold;
     }
 
     p.shop-description {
         color: white;
         user-select: none;
+        text-align: center;
+        max-width: 600px;
     }
 
     .vertical-line-and-shop-image-wrapper {
@@ -213,7 +216,7 @@ $shop-title-font-size: 3em;
 
 }
 
-@media only screen and (max-width:650px) {
+@media only screen and (max-width:800px) {
     #MainPage {
         @include flexCenter(column);
     }

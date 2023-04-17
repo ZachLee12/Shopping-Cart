@@ -102,8 +102,8 @@ export default function Shop(props) {
         <div id='Shop'>
             <div className="sidebar-wrapper">
                 <div className={`sidebar ${shop.showSideBar ? 'show-sidebar' : ''}`}>
-                    
-                    <img src={HikingInkArt} className="hiking-ink-art-image"/>
+
+                    <img src={HikingInkArt} className="hiking-ink-art-image" />
                     <div className="link-wrapper">
                         <Link
                             to={'/favourites'}
@@ -164,7 +164,7 @@ export default function Shop(props) {
             </div>
 
             <div className="shop-content">
-                <p className="shop-page-title">Find your style.</p>
+                <p className="shop-page-title">Find your gear.</p>
 
                 <Form className='search-form'>
                     <input

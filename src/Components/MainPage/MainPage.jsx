@@ -62,8 +62,8 @@ export default function MainPage() {
         <React.Fragment>
             <div id='MainPage'>
                 <div className="shop-introduction-container">
-                    <p className='shop-title'>Main Shop</p>
-                    <p className='shop-description'>Some other description about this main shop</p>
+                    <p className='shop-title'>Hiker. AG</p>
+                    <p className='shop-description'>In every walk with nature, you receive far more than you seek.</p>
                 </div>
                 <div
                     className="vertical-line-and-shop-image-wrapper">

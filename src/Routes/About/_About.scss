@@ -46,6 +46,7 @@
     @include flexCenter(column, true) {
         gap: 10px;
     }
+
     ;
     width: clamp(300px, 65%, 1300px);
     background-color: rgba(172, 170, 170, 0.175);
@@ -120,7 +121,7 @@
     }
 }
 
-@media screen and (max-width:840px) {
+@media screen and (max-width:980px) {
 
     .about-us-title.small {
         text-align: center;
