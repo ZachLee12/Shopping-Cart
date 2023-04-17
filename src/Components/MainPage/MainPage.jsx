@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import Mountain from '../../assets/images/Placeholder.jpg'
 import Jacket1 from '../../assets/images/shopItem12-women-attire.webp'

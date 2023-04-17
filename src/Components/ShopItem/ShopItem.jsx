@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { searchItems } from "../../shopItems";
 import '../../assets/fonts/Roboto/Roboto-Medium.ttf'
 
