@@ -55,7 +55,7 @@ export default function Favourites() {
     return (
         <div id="Favourites">
             <button onClick={goBack} className="go-back-btn-wrapper">
-                <img src={ArrowLeft} alt="" />
+                <img src={ArrowLeft} />
                 <p className="back-to-shop-title">Back To Shop</p>
             </button>
             <p className="favourites-title">Favourites</p>

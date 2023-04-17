@@ -100,3 +100,9 @@
         transform: translate(2px, 2px);
     }
 }
+
+@media screen and (max-width:450px) {
+    .back-to-shop-title {
+        display: none;
+    }
+}
