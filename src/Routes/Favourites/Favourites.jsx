@@ -9,7 +9,7 @@ export default function Favourites() {
     const goBack = () => {
         navigate(-1)
     }
-    
+
     const searchFavourites = (() => {
         return fullItemList.filter(item => item.isFavourite)
     })();

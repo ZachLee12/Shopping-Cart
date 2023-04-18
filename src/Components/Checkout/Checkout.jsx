@@ -21,7 +21,7 @@ export default function Checkout({ renderCheckout, handleClickUnmountCheckout, }
         if (totalItemPrices.length > 0) {
             return (totalItemPrices.reduce((acc, curr) => acc += curr)).toFixed(2)
         } else {
-            return null;
+            return 0;
         }
     }
 
@@ -42,7 +42,7 @@ export default function Checkout({ renderCheckout, handleClickUnmountCheckout, }
                                 </div>
                             </div>
                         )}
-                        <p className='final-price'>Final Price: {getFinalPrice(searchCart) + ' CHF'}</p>
+                        <p className='final-price'>Final Price: {Number(getFinalPrice(searchCart)).toFixed(2) + ' CHF'}</p>
 
                     </div>
                     <div className="link-and-button-wrapper">

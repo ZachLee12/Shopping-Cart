@@ -109,6 +109,12 @@ export default function Cart() {
                         />
                     )
                 })}
+
+                {cart.itemList.length === 0 &&
+                    <div className="no-favourites-wrapper">
+                        <p className="no-favourites-title">Nothing in Cart. ☹️</p>
+                    </div>
+                }
             </div>
             <div className="positioning-wrapper">
                 <button
@@ -123,7 +129,7 @@ export default function Cart() {
                 renderCheckout={cart.renderCheckout}
                 handleClickUnmountCheckout={handleClickUnmountCheckout}
             />
-            
+
         </div>
     )
 }

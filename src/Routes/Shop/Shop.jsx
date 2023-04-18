@@ -102,7 +102,6 @@ export default function Shop(props) {
         <div id='Shop'>
             <div className="sidebar-wrapper">
                 <div className={`sidebar ${shop.showSideBar ? 'show-sidebar' : ''}`}>
-
                     <img src={HikingInkArt} className="hiking-ink-art-image" />
                     <div className="link-wrapper">
                         <Link
