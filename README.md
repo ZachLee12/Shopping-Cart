@@ -1,6 +1,7 @@
 # Hiker. (A Shopping Cart project with Vite and React)
 
 Live-Demo: https://zachlee12.github.io/shopping-cart/
+Docker-Image: https://hub.docker.com/r/zachleezy/shopping-cart
 
 ![image](https://user-images.githubusercontent.com/117311591/233114149-ca86880b-1003-41d8-9dae-8f2d58ddca4d.png)
 
@@ -39,6 +40,20 @@ const hashRouter = createHashRouter([
 ])
 ```
 
+## Run it as a Docker Container!
+*image is configured to run at `port 8080`
+
+1. Pull the image from my docker hub.
+```
+docker pull zachleezy/shopping-cart
+```
+
+2. Run a docker container instance.
+```
+docker run zachleezy/shopping-cart
+```
+
+3. Navigate to `localhost:8080`. 
 
 
 
