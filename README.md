@@ -1,6 +1,7 @@
 # Hiker. (A Shopping Cart project with Vite and React)
 
 Live-Demo: https://zachlee12.github.io/shopping-cart/
+
 Docker-Image: https://hub.docker.com/r/zachleezy/shopping-cart
 
 ![image](https://user-images.githubusercontent.com/117311591/233114149-ca86880b-1003-41d8-9dae-8f2d58ddca4d.png)
