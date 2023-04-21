@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import Mountain from '../../assets/images/Placeholder.jpg'
-import Jacket1 from '../../assets/images/shopItem12-women-attire.webp'
+import Backpack2 from '../../assets/images/shopItem2-backpack.jpg'
 import Jacket2 from '../../assets/images/shopItem11-jacket.webp'
 import Backpack3 from '../../assets/images/shopItem3-backpack.webp'
 import HikingSticks from '../../assets/images/shopItem4-sticks.webp'
@@ -9,7 +9,7 @@ import HikingGearSet from '../../assets/images/shopItem1-backpack.jpg'
 
 export default function MainPage() {
     const carouselImageList =
-        [Jacket1,
+        [Backpack2,
             HikingSticks,
             Backpack3,
             Jacket2,

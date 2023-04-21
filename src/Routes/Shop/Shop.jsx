@@ -1,12 +1,8 @@
 import React from "react";
 import ShopItem from "../../Components/ShopItem/ShopItem";
 import HikingInkArt from '../../assets/images/hiking-ink-art.png'
-import {
-    itemList as fullItemList,
-    searchItems
-} from "../../shopItems";
+import { itemList as fullItemList, searchItems } from "../../shopItems";
 import uniqid from 'uniqid';
-
 import { Link } from "react-router-dom";
 import { Form, useLoaderData, useSubmit } from 'react-router-dom'
 
