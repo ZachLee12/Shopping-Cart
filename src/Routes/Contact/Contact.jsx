@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import LocationIcon from '../../assets/images/location.png'
 import EmailIcon from '../../assets/images/email.png'
+import LinkedInIcon from '../../assets/images/linkedin.png'
 import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
+import { Link } from "react-router-dom";
 
 export default function Contact() {
 
@@ -41,7 +43,7 @@ export default function Contact() {
                     </div>
                     <div className="contact-info-wrapper">
                         <div className="linkedIn-info-wrapper info-wrapper medium">
-                            <img src={EmailIcon} className="icon" />
+                            <img src={LinkedInIcon} className="icon" />
                             <p className='info-paragraph'>
                                 Zach Lee
                             </p>
